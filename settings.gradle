@@ -1,0 +1,2 @@
+rootProject.name='FitGain'
+include ':app'

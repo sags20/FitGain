@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/welcome_to"
+        android:layout_width="203dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="84dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/welcome_to"
+        android:textAppearance="@style/welcome_to"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/the_best_app"
+        android:layout_width="184dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/small_margin"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/the_best_app"
+        android:textAppearance="@style/the_best_app"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_to" />
+
+    <TextView
+        android:id="@+id/already_have"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:text="@string/already_have"
+        android:textAppearance="@style/already_have"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/sign_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_in"
+        android:textAppearance="@style/sign_in"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/already_have"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.208"
+        app:layout_constraintStart_toEndOf="@+id/already_have" />
+
+    <Button
+        android:id="@+id/button_log_in"
+        android:layout_width="@dimen/width_button"
+        android:layout_height="@dimen/height_button"
+        android:layout_marginBottom="84dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/log_in"
+        android:textAppearance="@style/button_purple_text"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="753dp"
+        android:layout_height="397dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_log_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/the_best_app"
+        app:srcCompat="@drawable/logged_out" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

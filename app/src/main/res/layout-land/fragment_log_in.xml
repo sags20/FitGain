@@ -12,30 +12,34 @@
         android:id="@+id/sign_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_wide"
-        android:layout_marginEnd="@dimen/margin_wide"
+        android:layout_marginStart="325dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="325dp"
+        android:layout_marginBottom="14dp"
         android:fontFamily="@font/rubik_bold"
         android:text="Sign in"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/editTextName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.084" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextName"
         android:layout_width="361dp"
         android:layout_height="46dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="186dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="184dp"
+        android:layout_marginBottom="17dp"
         android:background="@drawable/txt_1"
         android:ems="10"
         android:fontFamily="@font/rubik_bold"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/editTextPass"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sign_in" />
 
@@ -43,9 +47,9 @@
         android:id="@+id/buttonNext"
         android:layout_width="364dp"
         android:layout_height="70dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginStart="182dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="185dp"
         android:background="@drawable/btn_1"
         android:fontFamily="@font/rubik_bold"
         android:shadowColor="#5C0808"
@@ -53,109 +57,101 @@
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewPassInfo3" />
-
-    <TextView
-        android:id="@+id/textViewRegAlso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="118dp"
-        android:layout_marginTop="33dp"
-        android:layout_marginEnd="118dp"
-        android:fontFamily="@font/rubik_bold"
-        android:text="Registrarse también con"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonNext"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewPassInfo1" />
 
     <Button
         android:id="@+id/buttonGoogle"
         android:layout_width="135dp"
         android:layout_height="51dp"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/btn_g"
         android:fontFamily="@font/rubik_light"
         android:text="Google +"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textViewRegAlso" />
+
+    <TextView
+        android:id="@+id/textViewRegAlso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/rubik_bold"
+        android:text="Registrarse también con"
+        app:layout_constraintEnd_toStartOf="@+id/buttonGoogle"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/buttonFacebook"
-        app:layout_constraintTop_toBottomOf="@+id/textViewRegAlso" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonNext" />
 
     <Button
         android:id="@+id/buttonFacebook"
         android:layout_width="135dp"
         android:layout_height="51dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/btn_fb"
         android:fontFamily="@font/rubik_light"
         android:text="Facebook"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonGoogle"
+        app:layout_constraintEnd_toStartOf="@+id/textViewRegAlso"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewRegAlso" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonNext" />
 
     <TextView
         android:id="@+id/textViewPassInfo1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginEnd="236dp"
         android:text="8+ characters"
         android:textAllCaps="true"
         android:textColor="#9C9EB9"
-        app:layout_constraintBottom_toTopOf="@+id/textViewPassInfo2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toStartOf="@+id/square"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        tools:layout_editor_absoluteY="197dp" />
 
     <TextView
         android:id="@+id/textViewPassInfo2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="201dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="20dp"
         android:text="Al menos 1 mayuscula"
         android:textColor="#9C9EB9"
-        app:layout_constraintBottom_toTopOf="@+id/textViewPassInfo3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/square"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintBottom_toTopOf="@+id/buttonNext"
+        app:layout_constraintEnd_toStartOf="@+id/square5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/square"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPass" />
 
     <TextView
         android:id="@+id/textViewPassInfo3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="210dp"
         android:text="Al menos un simbolo"
         android:textColor="#9C9EB9"
-        app:layout_constraintBottom_toTopOf="@+id/buttonNext"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/square5" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/square5"
+        tools:layout_editor_absoluteY="195dp" />
 
     <EditText
         android:id="@+id/editTextPass"
         android:layout_width="360dp"
         android:layout_height="48dp"
-        android:layout_marginStart="@dimen/margin_wide"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="@dimen/margin_wide"
-        android:layout_marginBottom="37dp"
+        android:layout_marginStart="186dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="185dp"
         android:background="@drawable/txt_1"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/textViewPassInfo1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextName" />
 
@@ -163,27 +159,30 @@
         android:id="@+id/imageView"
         android:layout_width="18dp"
         android:layout_height="18dp"
-        android:layout_marginStart="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/textViewPassInfo1"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/sqr_1"
-        tools:layout_editor_absoluteY="288dp" />
+        tools:layout_editor_absoluteY="197dp" />
 
     <ImageView
         android:id="@+id/square"
         android:layout_width="18dp"
         android:layout_height="18dp"
-        android:layout_marginStart="24dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textViewPassInfo2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textViewPassInfo1"
         app:srcCompat="@drawable/sqr_1"
-        tools:layout_editor_absoluteY="328dp" />
+        tools:layout_editor_absoluteY="195dp" />
 
     <ImageView
         android:id="@+id/square5"
         android:layout_width="18dp"
         android:layout_height="18dp"
-        android:layout_marginStart="25dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textViewPassInfo3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textViewPassInfo2"
         app:srcCompat="@drawable/sqr_1"
-        tools:layout_editor_absoluteY="365dp" />
+        tools:layout_editor_absoluteY="196dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

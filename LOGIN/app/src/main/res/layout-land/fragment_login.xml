@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="360dp"
+            android:layout_height="38dp"
+            android:background="@drawable/round_corner"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            app:layout_constraintVertical_bias="0.19999999" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="360dp"
+            android:layout_height="38dp"
+            android:background="@drawable/round_corner"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            app:layout_constraintBottom_toTopOf="@+id/password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/title"
+            app:layout_constraintVertical_bias="0.76" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik_medium"
+            android:text="Log in"
+            android:textColor="@color/black_text"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.13" />
+
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="340dp"
+            android:layout_height="47dp"
+            android:background="@drawable/round_button"
+            android:fontFamily="@font/rubik_medium"
+            android:text="Log In"
+            android:textColor="@color/white_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/password"
+            app:layout_constraintVertical_bias="0.45" />
+
+        <TextView
+            android:id="@+id/socialText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Or connect with"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginButton"
+            app:layout_constraintVertical_bias="0.17000002" />
+
+        <Button
+            android:id="@+id/fbButton"
+            android:layout_width="147dp"
+            android:layout_height="42dp"
+            android:background="@drawable/round_fbutton"
+            android:fontFamily="@font/rubik_medium"
+            android:text="Facebook"
+            android:textColor="@color/white_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.17"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/socialText"
+            app:layout_constraintVertical_bias="0.32" />
+
+        <Button
+            android:id="@+id/gButton"
+            android:layout_width="147dp"
+            android:layout_height="42dp"
+            android:background="@drawable/round_gbutton"
+            android:fontFamily="@font/rubik_medium"
+            android:text="Google +"
+            android:textColor="@color/white_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.83"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/socialText"
+            app:layout_constraintVertical_bias="0.32" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

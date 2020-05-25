@@ -7,23 +7,23 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
-import com.example.login.databinding.FragmentRegister3Binding
+import com.example.login.databinding.FragmentSignUpBinding
 
 /**
  * A simple [Fragment] subclass.
  */
-class Register3 : Fragment() {
+class SignUp : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = DataBindingUtil.inflate<FragmentRegister3Binding>(
-            inflater, R.layout.fragment_register3, container, false
-        )
-        binding.signupButton.setOnClickListener { view: View ->
+       val binding = DataBindingUtil.inflate<FragmentSignUpBinding>(
+           inflater, R.layout.fragment_sign_up, container, false
+       )
+        binding.buttonNext.setOnClickListener{ view: View ->
             view.findNavController()
-                .navigate(R.id.action_register3_to_completeScreen)
+                .navigate(R.id.action_signUp_to_register2)
         }
 
         return binding.root

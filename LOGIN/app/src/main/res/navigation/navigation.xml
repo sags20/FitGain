@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/loggedOut">
+
+    <fragment
+        android:id="@+id/loggedOut"
+        android:name="com.example.login.LoggedOut"
+        android:label="LoggedOut"
+        tools:layout="@layout/fragment_logged_out">
+        <action
+            android:id="@+id/action_loggedOut_to_login"
+            app:destination="@id/login" />
+        <action
+            android:id="@+id/action_loggedOut_to_signUp"
+            app:destination="@id/signUp" />
+    </fragment>
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.login.Login"
+        android:label="Login"
+        tools:layout="@layout/fragment_login"/>
+    <fragment
+        android:id="@+id/signUp"
+        android:name="com.example.login.SignUp"
+        android:label="SignUp"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signUp_to_register2"
+            app:destination="@id/register2" />
+    </fragment>
+    <fragment
+        android:id="@+id/register2"
+        android:name="com.example.login.Register2"
+        android:label="Register2"
+        tools:layout="@layout/fragment_register2">
+        <action
+            android:id="@+id/action_register2_to_register3"
+            app:destination="@id/register3" />
+    </fragment>
+    <fragment
+        android:id="@+id/register3"
+        android:name="com.example.login.Register3"
+        android:label="Register3"
+        tools:layout="@layout/fragment_register3">
+        <action
+            android:id="@+id/action_register3_to_completeScreen"
+            app:destination="@id/completeScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/completeScreen"
+        android:name="com.example.login.CompleteScreen"
+        android:label="CompleteScreen"
+        tools:layout="@layout/fragment_complete_screen"/>
+</navigation>

@@ -9,4 +9,16 @@
     <color name="colorG">#F64343</color>
     <color name="white_text">#FFFFFF</color>
     <color name="black_text">#070707</color>
+
+
+    <color name="black"> #000000</color>
+    <color name="light_gray"> #9C9EB9</color>
+    <color name="light_purple"> #7265E3</color>
+    <color name="one_white">#E0DDF5</color>
+    <color name="two_white">#F0F1FF</color>
+    <color name="three_white">#D6D6DA</color>
+    <color name="white">#FFFFFF</color>
+    <color name="pink">#F33FD6</color>
+    <color name="light_green">#36DD1B</color>
+    <color name="sky_blue">#4BE8DE</color>
 </resources>

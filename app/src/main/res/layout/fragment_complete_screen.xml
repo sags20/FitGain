@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,135 +7,128 @@
     android:background="@color/white"
     tools:context=".ui.fragments.CompleteScreen">
 
-   <androidx.constraintlayout.widget.ConstraintLayout
-       android:layout_width="match_parent"
-       android:layout_height="match_parent">
-       <com.airbnb.lottie.LottieAnimationView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintBottom_toTopOf="@+id/fit_gain"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toTopOf="parent"
-           app:lottie_autoPlay="true"
-           app:lottie_fileName="success.json"
-           app:lottie_loop="false" />
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/fit_gain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="success.json"
+        app:lottie_loop="false" />
 
-       <TextView
-           android:id="@+id/fit_gain"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="250dp"
-           android:fontFamily="@font/rubik_medium"
-           android:text="@string/fit_gain"
-           android:textAppearance="@style/fit_gain_ready_to"
-           android:textColor="@color/black"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/fit_gain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubik_medium"
+        android:text="@string/fit_gain"
+        android:textAppearance="@style/fit_gain_ready_to"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/button_get_started"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-       <TextView
-           android:id="@+id/ready_to"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="32dp"
-           android:textAppearance="@style/fit_gain_ready_to"
-           android:text="@string/ready_to_go"
-           android:textColor="@color/black"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/fit_gain" />
+    <TextView
+        android:id="@+id/ready_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/ready_to_go"
+        android:textAppearance="@style/fit_gain_ready_to"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fit_gain" />
 
-       <TextView
-           android:id="@+id/thanks_for"
-           android:layout_width="204dp"
-           android:layout_height="63dp"
-           android:layout_marginTop="16dp"
-           android:gravity="center_vertical|center_horizontal"
-           android:text="@string/thanks_for"
-           android:textAppearance="@style/thanks_for"
-           android:textColor="@color/black"
-           android:textStyle="normal"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/ready_to" />
+    <TextView
+        android:id="@+id/thanks_for"
+        android:layout_width="204dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/thanks_for"
+        android:textAppearance="@style/thanks_for"
+        android:textColor="@color/black"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ready_to" />
 
-       <Button
-           android:id="@+id/button_get_started"
-           android:layout_width="0dp"
-           android:layout_height="50dp"
-           android:layout_marginStart="16dp"
-           android:layout_marginTop="64dp"
-           android:layout_marginEnd="16dp"
-           android:layout_marginBottom="16dp"
-           android:background="@drawable/rounded_button"
-           android:text="Explorar"
-           android:textAppearance="@style/get_started"
-           android:textColor="@color/white"
-           android:textSize="18sp"
-           android:textStyle="bold"
-           app:layout_constraintBottom_toBottomOf="parent"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/thanks_for" />
+    <Button
+        android:id="@+id/button_get_started"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_button"
+        android:text="Explorar"
+        android:textAppearance="@style/get_started"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
-       <ImageView
-           android:id="@+id/pink_circle"
-           android:layout_width="20dp"
-           android:layout_height="20dp"
-           android:layout_marginTop="88dp"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintHorizontal_bias="0.813"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/green_circle"
-           app:srcCompat="@drawable/circle_decoration"
-           android:tint="#4BE8DE"/>
+    <ImageView
+        android:id="@+id/pink_circle"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="88dp"
+        android:tint="#4BE8DE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.813"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/green_circle"
+        app:srcCompat="@drawable/circle_decoration" />
 
-       <ImageView
-           android:id="@+id/green_circle"
-           android:layout_width="20dp"
-           android:layout_height="20dp"
-           android:layout_marginTop="16dp"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintHorizontal_bias="0.084"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toTopOf="parent"
-           app:srcCompat="@drawable/circle_decoration" />
+    <ImageView
+        android:id="@+id/green_circle"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/circle_decoration" />
 
-       <ImageView
-           android:id="@+id/green_circle_two"
-           android:layout_width="20dp"
-           android:layout_height="20dp"
-           android:layout_marginBottom="132dp"
-           app:layout_constraintBottom_toTopOf="@+id/button_get_started"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintHorizontal_bias="0.787"
-           app:layout_constraintStart_toStartOf="parent"
-           app:srcCompat="@drawable/circle_decoration"
-           android:tint="#36DD1B"/>
+    <ImageView
+        android:id="@+id/green_circle_two"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="132dp"
+        android:tint="#36DD1B"
+        app:layout_constraintBottom_toTopOf="@+id/button_get_started"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.787"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/circle_decoration" />
 
-       <ImageView
-           android:id="@+id/pink_circle_two"
-           android:layout_width="20dp"
-           android:layout_height="20dp"
-           android:layout_marginBottom="16dp"
-           app:layout_constraintBottom_toBottomOf="parent"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintHorizontal_bias="0.063"
-           app:layout_constraintStart_toStartOf="parent"
-           app:srcCompat="@drawable/circle_decoration" />
+    <ImageView
+        android:id="@+id/pink_circle_two"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/circle_decoration" />
 
-       <ImageView
-           android:id="@+id/sky_blue_circle"
-           android:layout_width="20dp"
-           android:layout_height="20dp"
-           app:layout_constraintEnd_toStartOf="@+id/thanks_for"
-           app:layout_constraintHorizontal_bias="0.392"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/ready_to"
-           app:srcCompat="@drawable/circle_decoration"
-           android:tint="#4BE8DE"/>
-   </androidx.constraintlayout.widget.ConstraintLayout>
-
-</ScrollView>
+    <ImageView
+        android:id="@+id/sky_blue_circle"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:tint="#4BE8DE"
+        app:layout_constraintEnd_toStartOf="@+id/thanks_for"
+        app:layout_constraintHorizontal_bias="0.392"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ready_to"
+        app:srcCompat="@drawable/circle_decoration" />
+</androidx.constraintlayout.widget.ConstraintLayout>

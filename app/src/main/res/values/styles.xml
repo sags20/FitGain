@@ -8,4 +8,69 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- logged out -->
+    <style name="welcome_to">
+        <item name="android:textSize">@dimen/letter_24</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/rubik</item>
+    </style>
+
+    <style name="the_best_app">
+        <item name="android:textSize">@dimen/letter_14</item>
+        <item name="android:textColor">@color/light_gray</item>
+        <item name="fontFamily">@font/rubik</item>
+    </style>
+
+    <style name="already_have">
+        <item name="android:textSize">@dimen/letter_13</item>
+        <item name="android:textColor">@color/light_gray</item>
+        <item name="fontFamily">@font/rubik</item>
+    </style>
+
+    <style name="sign_in">
+        <item name="android:textSize">@dimen/letter_13</item>
+        <item name="android:textColor">@color/light_purple</item>
+        <item name="fontFamily">@font/rubik</item>
+    </style>
+
+    <style name="button_purple_text">
+        <item name="android:textSize">@dimen/letter_13</item>
+        <item name="android:textColor">@color/one_white</item>
+        <item name="fontFamily">@font/rubik</item>
+    </style>
+
+
+    <!-- register_2 -->
+
+    <style name="final_step">
+        <item name="android:textSize">@dimen/letter_24</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/rubik</item>
+    </style>
+
+    <style name="by_signing">
+        <item name="android:textSize">@dimen/letter_13</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/rubik</item>
+    </style>
+
+    <!-- complete screen -->
+    <style name="fit_gain_ready_to">
+        <item name="android:textSize">@dimen/letter_24</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/rubik_medium</item>
+    </style>
+
+    <style name="thanks_for">
+        <item name="android:textSize">@dimen/letter_14</item>
+        <item name="android:textColor">@color/three_white</item>
+        <item name="fontFamily">@font/rubik</item>
+    </style>
+
+    <style name="get_started">
+        <item name="android:textSize">@dimen/letter_13</item>
+        <item name="android:textColor">@color/light_purple</item>
+        <item name="fontFamily">@font/rubik_medium</item>
+    </style>
+
 </resources>

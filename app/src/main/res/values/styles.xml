@@ -22,7 +22,7 @@
     </style>
 
     <style name="already_have">
-        <item name="android:textSize">@dimen/letter_13</item>
+        <item name="android:textSize">@dimen/letter_14</item>
         <item name="android:textColor">@color/light_gray</item>
         <item name="fontFamily">@font/rubik</item>
     </style>
@@ -36,7 +36,7 @@
     <style name="button_purple_text">
         <item name="android:textSize">@dimen/letter_13</item>
         <item name="android:textColor">@color/one_white</item>
-        <item name="fontFamily">@font/rubik</item>
+        <item name="fontFamily">@font/rubik_medium</item>
     </style>
 
 

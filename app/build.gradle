@@ -55,4 +55,8 @@ dependencies {
 
     //Lottie Animations
     implementation 'com.airbnb.android:lottie:2.5.0'
+
+    //navegation chip
+    implementation 'com.ismaeldivita.chipnavigation:chip-navigation-bar:1.2.0'
+    implementation 'com.fxn769:ariana:1.0'
 }

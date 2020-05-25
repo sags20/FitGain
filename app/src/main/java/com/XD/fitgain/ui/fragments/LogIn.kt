@@ -1,5 +1,6 @@
 package com.XD.fitgain.ui.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import com.XD.fitgain.R
 import com.XD.fitgain.databinding.FragmentLogInBinding
+import com.XD.fitgain.ui.NavigationContainerHome
 
 class LogIn : Fragment() {
     private lateinit var binding: FragmentLogInBinding
@@ -23,6 +25,10 @@ class LogIn : Fragment() {
 
         binding.btnForgotPassword.setOnClickListener {
             it.findNavController().navigate(R.id.action_logIn_to_forgotPassword)
+        }
+
+        binding.btnLogin.setOnClickListener {
+            startActivity(Intent(activity, NavigationContainerHome::class.java))
         }
 
         return binding.root

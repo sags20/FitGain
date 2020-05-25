@@ -1,22 +1,20 @@
-package com.XD.fitgain.screens.fragments
+package com.XD.fitgain.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.XD.fitgain.R
-import com.XD.fitgain.databinding.FragmentHomeBinding
+import com.XD.fitgain.databinding.FragmentConfig1Binding
 
+class Config1 : Fragment() {
 
-class Home : Fragment() {
-
-    private lateinit var binding: FragmentHomeBinding
+    private lateinit var binding: FragmentConfig1Binding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        binding = FragmentConfig1Binding.inflate(inflater, container, false)
 
         return binding.root
     }

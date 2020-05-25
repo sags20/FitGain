@@ -1,4 +1,4 @@
-package com.XD.fitgain.screens.fragments
+package com.XD.fitgain.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -19,7 +19,7 @@ class CompleteScreen : Fragment() {
         binding = FragmentCompleteScreenBinding.inflate(inflater, container, false)
 
         binding.buttonGetStarted.setOnClickListener {
-            it.findNavController().navigate(R.id.action_completeScreen_to_config1)
+            //it.findNavController().navigate(R.id.action_completeScreen_to_config1)
         }
 
         return binding.root

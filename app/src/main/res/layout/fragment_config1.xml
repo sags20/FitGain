@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screens.fragments.Config1"
+    tools:context=".ui.fragments.Config1"
     android:background="@color/white">
 
     <TextView
@@ -73,7 +73,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/rubik_medium"
         android:gravity="center_vertical|center_horizontal"
-        android:text="NO AHORA"
+        android:text="No ahora"
         android:textColor="@color/light_purple"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"

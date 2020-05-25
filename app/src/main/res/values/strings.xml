@@ -4,7 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="welcome_to">Bienvenido a FitGain</string>
     <string name="the_best_app">La mejor aplicación para hacer ejercicio y ganar por ello.</string>
-    <string name="already_have">¿YA TIENES CUENTA? INICIA SESIÓN</string>
+    <string name="already_have">¿Ya tienes cuenta? Inicia Sesión</string>
     <string name="log_in">LOG IN</string>
     <string name="sign_up">REGISTRARSE</string>
     <string name="final_step">Último paso, define tu nombre de usuario</string>

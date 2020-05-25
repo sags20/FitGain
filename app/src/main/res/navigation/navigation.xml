@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/logOut"
-        android:name="com.XD.fitgain.screens.fragments.LogOut"
+        android:name="com.XD.fitgain.ui.fragments.LogOut"
         android:label="fragment_log_out"
         tools:layout="@layout/fragment_log_out" >
         <action
@@ -23,7 +23,7 @@
     </fragment>
     <fragment
         android:id="@+id/logIn"
-        android:name="com.XD.fitgain.screens.fragments.LogIn"
+        android:name="com.XD.fitgain.ui.fragments.LogIn"
         android:label="fragment_log_in"
         tools:layout="@layout/fragment_log_in" >
         <action
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/register1"
-        android:name="com.XD.fitgain.screens.fragments.Register1"
+        android:name="com.XD.fitgain.ui.fragments.Register1"
         android:label="fragment_register1"
         tools:layout="@layout/fragment_register1" >
         <action
@@ -51,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/register2"
-        android:name="com.XD.fitgain.screens.fragments.Register2"
+        android:name="com.XD.fitgain.ui.fragments.Register2"
         android:label="fragment_register2"
         tools:layout="@layout/fragment_register2" >
         <action
@@ -65,7 +65,7 @@
     </fragment>
     <fragment
         android:id="@+id/register3"
-        android:name="com.XD.fitgain.screens.fragments.Register3"
+        android:name="com.XD.fitgain.ui.fragments.Register3"
         android:label="fragment_register3"
         tools:layout="@layout/fragment_register3" >
         <action
@@ -76,7 +76,7 @@
     </fragment>
     <fragment
         android:id="@+id/completeScreen"
-        android:name="com.XD.fitgain.screens.fragments.CompleteScreen"
+        android:name="com.XD.fitgain.ui.fragments.CompleteScreen"
         android:label="fragment_complete_screen"
         tools:layout="@layout/fragment_complete_screen" >
         <action
@@ -87,12 +87,12 @@
     </fragment>
     <fragment
         android:id="@+id/config1"
-        android:name="com.XD.fitgain.screens.fragments.Config1"
+        android:name="com.XD.fitgain.ui.fragments.Config1"
         android:label="fragment_config1"
         tools:layout="@layout/fragment_config1" />
     <fragment
         android:id="@+id/forgotPassword"
-        android:name="com.XD.fitgain.screens.fragments.ForgotPassword"
+        android:name="com.XD.fitgain.ui.fragments.ForgotPassword"
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password" >
         <action

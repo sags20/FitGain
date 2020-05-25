@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screens.fragments.Register2">
+    tools:context=".ui.fragments.Register2">
 
     <ImageView
         android:id="@+id/btn_backScreen"
@@ -112,6 +112,8 @@
         android:fontFamily="@font/rubik"
         android:hint="01/01/1999"
         android:inputType="date"
+        android:focusable="false"
+        android:clickable="true"
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

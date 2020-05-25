@@ -1,4 +1,4 @@
-package com.XD.fitgain.screens.fragments
+package com.XD.fitgain.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

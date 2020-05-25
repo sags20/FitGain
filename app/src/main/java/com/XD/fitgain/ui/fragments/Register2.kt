@@ -1,4 +1,4 @@
-package com.XD.fitgain.screens.fragments
+package com.XD.fitgain.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -16,6 +16,7 @@ class Register2 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentRegister2Binding.inflate(inflater, container, false)
+
         binding.btnContinuar.setOnClickListener {
             it.findNavController().navigate(R.id.action_register2_to_register3)
         }
@@ -23,7 +24,9 @@ class Register2 : Fragment() {
         binding.btnBackScreen.setOnClickListener {
             it.findNavController().navigate(R.id.action_register2_to_register1)
         }
+
         return binding.root
     }
+
 
 }

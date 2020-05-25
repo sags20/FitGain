@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -34,7 +34,7 @@
     </style>
 
     <style name="button_purple_text">
-        <item name="android:textSize">@dimen/letter_13</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/one_white</item>
         <item name="fontFamily">@font/rubik_medium</item>
     </style>

@@ -6,13 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.XD.fitgain.R
+import com.XD.fitgain.databinding.FragmentCompleteScreenBinding
+
 class CompleteScreen : Fragment() {
 
+    private lateinit var binding: FragmentCompleteScreenBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_complete_screen, container, false)
+        binding = FragmentCompleteScreenBinding.inflate(inflater, container, false)
+
+        return binding.root
     }
 }

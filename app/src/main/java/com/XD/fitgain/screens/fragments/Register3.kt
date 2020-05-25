@@ -5,16 +5,22 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import com.XD.fitgain.R
+import com.XD.fitgain.databinding.FragmentRegister3Binding
 
 class Register3 : Fragment() {
 
-
+    private lateinit var binding: FragmentRegister3Binding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register3, container, false)
+        binding = FragmentRegister3Binding.inflate(inflater, container, false)
+
+        binding.btnFinalizar.setOnClickListener {
+            it.findNavController().navigate(R.id.action_register3_to_completeScreen)
+        }
+        return binding.root
     }
 }

@@ -4,17 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_purple"
+    android:background="@color/white"
     tools:context=".ui.fragments.CompleteScreen">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/fit_gain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="success.json"
+        app:lottie_loop="false" />
 
     <TextView
         android:id="@+id/fit_gain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="250dp"
         android:fontFamily="@font/rubik_medium"
         android:text="@string/fit_gain"
         android:textAppearance="@style/fit_gain_ready_to"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,6 +38,7 @@
         android:layout_marginTop="32dp"
         android:textAppearance="@style/fit_gain_ready_to"
         android:text="@string/ready_to_go"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fit_gain" />
@@ -38,6 +51,7 @@
         android:gravity="center_vertical|center_horizontal"
         android:text="@string/thanks_for"
         android:textAppearance="@style/thanks_for"
+        android:textColor="@color/black"
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,8 +65,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/rounded_button"
-        android:backgroundTint="@android:color/white"
         android:text="Explorar"
+        android:textColor="@color/white"
         android:textSize="18sp"
         android:textAppearance="@style/get_started"
         android:textStyle="bold"

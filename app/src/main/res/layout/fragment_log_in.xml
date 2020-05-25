@@ -26,7 +26,7 @@
         android:fontFamily="@font/rubik_medium"
         android:text="Iniciar Sesión"
         android:textColor="@color/black_text"
-        android:textSize="24sp"
+        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -68,7 +68,7 @@
         app:layout_constraintTop_toBottomOf="@+id/et_correo" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/btn_forgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -76,7 +76,7 @@
         android:fontFamily="@font/rubik"
         android:text="¿Olvidaste tu contraseña?"
         android:textColor="@color/light_purple"
-        android:textSize="14sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"

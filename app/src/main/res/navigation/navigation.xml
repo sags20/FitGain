@@ -29,6 +29,11 @@
         <action
             android:id="@+id/action_logIn_to_logOut"
             app:destination="@id/logOut" />
+        <action
+            android:id="@+id/action_logIn_to_forgotPassword"
+            app:destination="@id/forgotPassword"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/register1"
@@ -85,4 +90,15 @@
         android:name="com.XD.fitgain.screens.fragments.Config1"
         android:label="fragment_config1"
         tools:layout="@layout/fragment_config1" />
+    <fragment
+        android:id="@+id/forgotPassword"
+        android:name="com.XD.fitgain.screens.fragments.ForgotPassword"
+        android:label="fragment_forgot_password"
+        tools:layout="@layout/fragment_forgot_password" >
+        <action
+            android:id="@+id/action_forgotPassword_to_logIn"
+            app:destination="@id/logIn"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
 </navigation>

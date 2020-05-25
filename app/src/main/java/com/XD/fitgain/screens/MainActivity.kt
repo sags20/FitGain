@@ -1,7 +1,8 @@
-package com.XD.fitgain
+package com.XD.fitgain.screens
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.XD.fitgain.R
 
 class MainActivity : AppCompatActivity() {
 

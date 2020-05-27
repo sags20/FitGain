@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.Activity"
-    android:background="@color/white">
+    android:background="@color/white"
+    tools:context=".ui.fragments.Activity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -13,74 +13,74 @@
 
         <ImageView
             android:id="@+id/imageView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:src="@drawable/ic_info" />
+            android:src="@drawable/ic_info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView17"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/rubik_medium"
             android:text="PASOS DE HOY"
             android:textColor="@color/light_purple"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <TextView
             android:id="@+id/textView13"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/rubik_medium"
             android:text="Haz caminado el"
             android:textColor="@android:color/black"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
 
         <TextView
             android:id="@+id/tv_step_count"
-            app:layout_constraintEnd_toStartOf="@+id/textView23"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:fontFamily="@font/rubik_medium"
             android:text="40%"
             android:textColor="@color/light_purple"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/textView23"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
         <TextView
             android:id="@+id/textView23"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.67"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/rubik_medium"
             android:text="de tu meta diaria"
             android:textColor="@android:color/black"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.67"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
         <RelativeLayout
             android:id="@+id/relativeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_step_count"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            app:layout_constraintTop_toBottomOf="@+id/tv_step_count">
 
             <ProgressBar
                 android:id="@+id/pgb_steps"
@@ -91,7 +91,7 @@
                 android:layout_marginTop="32dp"
                 android:progress="90"
                 android:progressDrawable="@drawable/progress_bar_design"
-                android:progressTint="@color/light_purple"/>
+                android:progressTint="@color/light_purple" />
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -101,37 +101,37 @@
 
                 <ImageView
                     android:id="@+id/img_zap"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_sun" />
+                    android:src="@drawable/ic_sun"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tv_percentage_steps"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/img_zap"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/rubik_medium"
                     android:text="8,250"
                     android:textColor="@android:color/black"
-                    android:textSize="24sp" />
-
-                <TextView
+                    android:textSize="24sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_percentage_steps"
+                    app:layout_constraintTop_toBottomOf="@+id/img_zap" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/rubik_medium"
                     android:text="pasos"
                     android:textColor="@color/light_gray"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_percentage_steps" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -140,11 +140,11 @@
 
         <RelativeLayout
             android:id="@+id/relativeLayout3"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
             app:layout_constraintEnd_toStartOf="@+id/relativeLayout5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content">
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
 
             <ProgressBar
                 android:id="@+id/pgb_cal"
@@ -180,11 +180,11 @@
 
         <RelativeLayout
             android:id="@+id/relativeLayout5"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
             app:layout_constraintEnd_toStartOf="@+id/relativeLayout6"
             app:layout_constraintStart_toEndOf="@+id/relativeLayout3"
-            app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content">
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
 
             <ProgressBar
                 android:id="@+id/pgb_distance"
@@ -219,11 +219,11 @@
 
         <RelativeLayout
             android:id="@+id/relativeLayout6"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/relativeLayout5"
-            app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content">
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
 
             <ProgressBar
                 android:id="@+id/pgb_minutes"
@@ -258,19 +258,19 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
-            app:cardBackgroundColor="#F5F6FA"
-            app:cardCornerRadius="25dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/relativeLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
-            android:elevation="0dp">
+            android:elevation="0dp"
+            app:cardBackgroundColor="#F5F6FA"
+            app:cardCornerRadius="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout3">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -278,12 +278,12 @@
 
                 <RelativeLayout
                     android:id="@+id/relativeLayout2"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp">
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
                         android:layout_width="56dp"
@@ -309,10 +309,6 @@
 
                 <TextView
                     android:id="@+id/textView3"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/relativeLayout2"
-                    app:layout_constraintTop_toTopOf="parent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -320,13 +316,13 @@
                     android:fontFamily="@font/rubik_medium"
                     android:text="Puntos de Salud"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/relativeLayout2"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/textView3"
-                    app:layout_constraintTop_toBottomOf="@+id/textView3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -335,19 +331,23 @@
                     android:fontFamily="@font/rubik"
                     android:text="Estos puntos los haz ganado haciendo ejercicio, ¡Sigue así! Entre más tengas más cerca estás de tu objetivo. Tu record de pasos es: 12,000 ¡Sigue así!"
                     android:textColor="@color/light_gray"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView3"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
                 <ImageView
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/textView3"
-                    app:layout_constraintTop_toTopOf="parent"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="32dp"
                     android:backgroundTint="#F5F6FA"
-                    android:src="@drawable/ic_card_giftcard" />
+                    android:src="@drawable/ic_card_giftcard"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/textView3"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

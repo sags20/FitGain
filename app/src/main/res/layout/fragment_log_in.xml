@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.LogIn">
+    android:fillViewport="true"
+    tools:context=".ui.fragments.LogIn"
+    android:background="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -46,6 +48,9 @@
             android:fontFamily="@font/rubik"
             android:ems="10"
             android:hint="Ingresa tu correo"
+            android:drawableTint="@color/light_gray"
+            android:drawableLeft="@drawable/ic_email"
+            android:drawablePadding="12dp"
             android:inputType="textEmailAddress"
             android:textColor="@android:color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -64,6 +69,9 @@
             android:ems="10"
             android:fontFamily="@font/rubik"
             android:hint="Ingresa tu contraseña"
+            android:drawableTint="@color/light_gray"
+            android:drawableLeft="@drawable/ic_lock"
+            android:drawablePadding="12dp"
             android:inputType="textPassword"
             android:textColor="@android:color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -90,7 +98,6 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/rounded_button"
             android:fontFamily="@font/rubik_medium"
@@ -98,23 +105,28 @@
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_LoginFacebook"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_forgotPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_forgotPassword"
+            app:layout_constraintVertical_bias="0.76" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
             android:fontFamily="@font/rubik"
             android:text="O inicia con"
             android:textColor="@android:color/black"
             android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_LoginFacebook"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_login"
+            app:layout_constraintVertical_bias="0.0" />
 
 
         <Button
@@ -142,7 +154,6 @@
             android:layout_height="50dp"
             android:layout_gravity="center|bottom"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/rounded_button"
@@ -155,8 +166,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/btn_Logingoogle"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintStart_toEndOf="@+id/btn_Logingoogle" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

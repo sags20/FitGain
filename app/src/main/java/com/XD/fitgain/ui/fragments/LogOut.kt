@@ -23,6 +23,10 @@ class LogOut : Fragment() {
             it.findNavController().navigate(R.id.action_logOut_to_logIn)
         }
 
+        binding.tvLogin.setOnClickListener {
+            it.findNavController().navigate(R.id.action_logOut_to_logIn)
+        }
+
         binding.buttonSignUp.setOnClickListener {
             it.findNavController().navigate(R.id.action_logOut_to_register1)
         }

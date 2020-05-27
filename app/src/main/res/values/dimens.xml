@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="letter_24">24sp</dimen>
+    <dimen name="big_margin">32dp</dimen>
+    <dimen name="letter_14">14sp</dimen>
+    <dimen name="letter_13">13sp</dimen>
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="width_button">322dp</dimen>
+    <dimen name="height_button">52dp</dimen>
+    <dimen name="medium_margin">24dp</dimen>
+    <dimen name="margin_wide">16dp</dimen>
+</resources>

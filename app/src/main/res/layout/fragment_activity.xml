@@ -11,27 +11,28 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imageView"
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:src="@drawable/ic_info"
+            android:background="@android:color/transparent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/textView17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/rubik_medium"
-            android:text="PASOS DE HOY"
+            android:text="@string/pasos_de_hoy"
             android:textColor="@color/light_purple"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_info" />
 
         <TextView
             android:id="@+id/textView13"
@@ -39,38 +40,22 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/rubik_medium"
-            android:text="Haz caminado el"
+            android:text="@string/haz_caminado_el"
             android:textColor="@android:color/black"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
-
         <TextView
             android:id="@+id/tv_percentage_steps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
             android:fontFamily="@font/rubik_medium"
-            android:text="0%"
-            android:textColor="@color/light_purple"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toStartOf="@+id/textView23"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView13" />
-
-        <TextView
-            android:id="@+id/textView23"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/rubik_medium"
-            android:text="de tu meta diaria"
+            android:text="0.00% de tu meta diaria"
             android:textColor="@android:color/black"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.67"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
@@ -143,37 +128,46 @@
         <RelativeLayout
             android:id="@+id/relativeLayout3"
             android:layout_width="70dp"
-            android:layout_height="wrap_content"
+            android:layout_height="120dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView"
             app:layout_constraintEnd_toStartOf="@+id/relativeLayout5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
 
-            <ProgressBar
-                android:id="@+id/pgb_cal"
-                style="?android:progressBarStyleHorizontal"
+            <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                android:id="@+id/pgb_calories"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="150dp"
                 android:layout_centerInParent="true"
-                android:layout_marginBottom="-15dp"
-                android:progress="90"
-                android:progressDrawable="@drawable/progress_bar_design"
-                android:progressTint="#7DE3EE" />
+                android:layout_centerVertical="true"
+                app:cpb_background_progressbar_color="#F2F2F2"
+                app:cpb_background_progressbar_width="10dp"
+                app:cpb_progress_max="150"
+                app:cpb_progressbar_color="#BAF1F8"
+                app:cpb_progressbar_width="7.5dp" />
+
 
             <ImageView
+                android:id="@+id/img_cal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+
                 android:src="@drawable/ic_activity"
-                android:tint="#7DE3EE" />
+                android:tint="#BAF1F8" />
 
             <TextView
                 android:id="@+id/tv_calValue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/pgb_cal"
+                android:layout_below="@id/pgb_calories"
+                android:layout_centerInParent="true"
+                android:layout_margin="5dp"
                 android:fontFamily="@font/rubik_medium"
                 android:gravity="center"
-                android:text="34 Cal"
+                android:text="0.00 Cal"
                 android:textColor="@android:color/black"
                 android:textSize="14sp" />
 
@@ -183,25 +177,33 @@
         <RelativeLayout
             android:id="@+id/relativeLayout5"
             android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toStartOf="@+id/relativeLayout6"
-            app:layout_constraintStart_toEndOf="@+id/relativeLayout3"
+            android:layout_height="120dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
 
-            <ProgressBar
+            <com.mikhaellopez.circularprogressbar.CircularProgressBar
                 android:id="@+id/pgb_distance"
-                style="?android:progressBarStyleHorizontal"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="150dp"
                 android:layout_centerInParent="true"
-                android:progress="90"
-                android:progressDrawable="@drawable/progress_bar_design"
-                android:progressTint="#AE8EFD" />
+                android:layout_centerVertical="true"
+                app:cpb_background_progressbar_color="#F2F2F2"
+                app:cpb_background_progressbar_width="10dp"
+                app:cpb_progress_max="1"
+                app:cpb_progressbar_color="#AE8EFD"
+                app:cpb_progressbar_width="7.5dp" />
+
 
             <ImageView
+                android:id="@+id/img_distance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+
                 android:src="@drawable/ic_map_pin"
                 android:tint="#AE8EFD" />
 
@@ -209,7 +211,9 @@
                 android:id="@+id/tv_disValue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/pgb_distance"
+                android:layout_below="@id/pgb_distance"
+                android:layout_centerInParent="true"
+                android:layout_margin="5dp"
                 android:fontFamily="@font/rubik_medium"
                 android:gravity="center"
                 android:text="2 KM"
@@ -220,38 +224,48 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/relativeLayout6"
+            android:id="@+id/relativeLayout4"
             android:layout_width="70dp"
-            android:layout_height="wrap_content"
+            android:layout_height="120dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/relativeLayout5"
             app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
 
-            <ProgressBar
-                android:id="@+id/pgb_minutes"
-                style="?android:progressBarStyleHorizontal"
+            <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                android:id="@+id/pgb_limitedPoints"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="150dp"
                 android:layout_centerInParent="true"
-                android:progress="90"
-                android:progressDrawable="@drawable/progress_bar_design"
-                android:progressTint="#1F88FF" />
+                android:layout_centerVertical="true"
+                app:cpb_background_progressbar_color="#F2F2F2"
+                app:cpb_background_progressbar_width="10dp"
+                app:cpb_progress_max="10"
+                app:cpb_progressbar_color="#1082FD"
+                app:cpb_progressbar_width="7.5dp" />
+
 
             <ImageView
+                android:id="@+id/img_points"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:src="@drawable/ic_clock"
-                android:tint="#1F88FF" />
+
+                android:src="@drawable/ic_card_giftcard"
+                android:tint="#1082FD" />
 
             <TextView
-                android:id="@+id/tv_timeValue"
+                android:id="@+id/tv_poinstValue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/pgb_minutes"
+                android:layout_below="@id/pgb_limitedPoints"
+                android:layout_centerInParent="true"
+                android:layout_margin="5dp"
                 android:fontFamily="@font/rubik_medium"
                 android:gravity="center"
-                android:text="10 Min"
+                android:text="0 PS"
                 android:textColor="@android:color/black"
                 android:textSize="14sp" />
 
@@ -263,7 +277,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
             android:elevation="0dp"
@@ -271,8 +284,7 @@
             app:cardCornerRadius="25dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/relativeLayout3">
+            app:layout_constraintStart_toStartOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -295,7 +307,7 @@
                         android:src="@drawable/ic_hexagon" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/tv_pointsInfo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
@@ -316,7 +328,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="24dp"
                     android:fontFamily="@font/rubik_medium"
-                    android:text="Puntos de Salud"
+                    android:text="@string/puntos_de_salud_ps"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -331,7 +343,7 @@
                     android:layout_marginEnd="24dp"
                     android:layout_marginBottom="24dp"
                     android:fontFamily="@font/rubik"
-                    android:text="Estos puntos los haz ganado haciendo ejercicio, ¡Sigue así! Entre más tengas más cerca estás de tu objetivo. Tu record de pasos es: 12,000 ¡Sigue así!"
+                    android:text="@string/PS_info"
                     android:textColor="@color/light_gray"
                     android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"

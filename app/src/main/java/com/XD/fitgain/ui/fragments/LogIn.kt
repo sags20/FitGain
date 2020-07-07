@@ -19,7 +19,8 @@ import com.google.android.gms.common.api.Api.ApiOptions.HasOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import kotlinx.android.synthetic.main.fragment_log_in.*
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 
 
 class LogIn : Fragment() {

@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import com.XD.fitgain.R
 import com.XD.fitgain.databinding.FragmentProfileBinding
 import com.XD.fitgain.ui.MainActivity
+import com.facebook.login.LoginManager
 import com.google.firebase.auth.FirebaseAuth
 
 /**
@@ -32,6 +33,11 @@ class Profile : Fragment() {
 
         binding.btnCerrarSesion.setOnClickListener {
             mAuth.signOut()
+            startActivity(Intent(activity, MainActivity::class.java))
+            requireActivity().finish()
+
+            //Facebook
+            LoginManager.getInstance().logOut()
             startActivity(Intent(activity, MainActivity::class.java))
             requireActivity().finish()
         }

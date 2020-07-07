@@ -16,4 +16,9 @@
     <string name="thanks_for">" Gracias por tomarte el tiempo creando tu cuenta. Ahora exploremos la app. "</string>
     <string name="button_get_started">GET STARTED</string>
     <string name="landing_image">landing image</string>
+
+    //Facebook Auth
+    <string name="facebook_app_id">316654652672904</string>
+    <string name="fb_login_protocol_scheme">fb316654652672904</string>
+
 </resources>

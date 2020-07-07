@@ -76,6 +76,9 @@ class Activity : Fragment() {
         previousSteps = sharedPreferences.getInt("stepCount", 0)
         totalSteps = previousSteps + currentSteps
 
+        var distance = (totalSteps * 0.71777203560149) / 1000
+        tv_disValue.text = String.format("%.2f", distance) + " Km"
+
         tv_steps.text = totalSteps.toString()
         progress_circular.apply {
             setProgressWithAnimation(totalSteps.toFloat())

@@ -1,23 +1,24 @@
-package com.XD.fitgain.ui.fragments
+package com.XD.fitgain.views.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.XD.fitgain.databinding.FragmentConfig1Binding
 
-class Config1 : Fragment() {
+import com.XD.fitgain.R
 
-    private lateinit var binding: FragmentConfig1Binding
+/**
+ * A simple [Fragment] subclass.
+ */
+class Profile : Fragment() {
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentConfig1Binding.inflate(inflater, container, false)
-
-        return binding.root
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_profile, container, false)
     }
-
 
 }

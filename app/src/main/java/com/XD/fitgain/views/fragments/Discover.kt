@@ -1,4 +1,4 @@
-package com.XD.fitgain.ui.fragments
+package com.XD.fitgain.views.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,10 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-import com.XD.fitgain.R
 import com.XD.fitgain.databinding.FragmentDiscoverBinding
-import com.XD.fitgain.ui.DiscoverSelected
-import com.XD.fitgain.ui.NavigationContainerHome
+import com.XD.fitgain.views.DiscoverSelected
 
 /**
  * A simple [Fragment] subclass.

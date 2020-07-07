@@ -1,4 +1,4 @@
-package com.XD.fitgain.ui
+package com.XD.fitgain.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

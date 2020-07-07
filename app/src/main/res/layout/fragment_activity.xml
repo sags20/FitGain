@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.fragments.Activity">
+    tools:context=".views.fragments.Activity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -48,12 +48,12 @@
 
 
         <TextView
-            android:id="@+id/tv_step_count"
+            android:id="@+id/tv_percentage_steps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:fontFamily="@font/rubik_medium"
-            android:text="40%"
+            android:text="0%"
             android:textColor="@color/light_purple"
             android:textSize="24sp"
             app:layout_constraintEnd_toStartOf="@+id/textView23"
@@ -78,20 +78,22 @@
             android:id="@+id/relativeLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_step_count">
+            app:layout_constraintTop_toBottomOf="@+id/tv_percentage_steps">
 
-            <ProgressBar
-                android:id="@+id/pgb_steps"
-                style="?android:progressBarStyleHorizontal"
+            <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                android:id="@+id/progress_circular"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_centerInParent="true"
-                android:layout_marginTop="32dp"
-                android:progress="90"
-                android:progressDrawable="@drawable/progress_bar_design"
-                android:progressTint="@color/light_purple" />
+                app:cpb_background_progressbar_color="#F2F2F2"
+                app:cpb_background_progressbar_width="20dp"
+                app:cpb_progress_max="2500"
+                app:cpb_progressbar_color="@color/light_purple"
+                app:cpb_progressbar_width="15dp"
+                app:cpb_round_border="true" />
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -109,12 +111,12 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/tv_percentage_steps"
+                    android:id="@+id/tv_steps"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/rubik_medium"
-                    android:text="8,250"
+                    android:text="0"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -131,7 +133,7 @@
                     android:textSize="12sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_percentage_steps" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_steps" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

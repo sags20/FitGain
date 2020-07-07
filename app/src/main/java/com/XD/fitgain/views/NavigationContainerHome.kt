@@ -1,11 +1,15 @@
-package com.XD.fitgain.ui
+package com.XD.fitgain.views
 
 import PagerViewAdapter
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.PagerAdapter
 import com.XD.fitgain.R
 import com.XD.fitgain.databinding.ActivityNavigationContainerHomeBinding
+import com.XD.fitgain.services.StepsLoggerService
+
 
 class NavigationContainerHome : AppCompatActivity() {
 
@@ -14,6 +18,7 @@ class NavigationContainerHome : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        startService(Intent(this, StepsLoggerService()::class.java))
         binding = ActivityNavigationContainerHomeBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
@@ -33,4 +38,5 @@ class NavigationContainerHome : AppCompatActivity() {
             }
         }
     }
+
 }

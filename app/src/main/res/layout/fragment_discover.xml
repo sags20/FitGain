@@ -107,7 +107,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardInformatica"
+                android:id="@+id/cardTecnologia"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:layout_rowWeight="1"
@@ -137,7 +137,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/tvCountInformatica"
+                        android:id="@+id/tvCountTec"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -161,14 +161,14 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvCountInformatica" />
+                        app:layout_constraintTop_toBottomOf="@+id/tvCountTec" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardAdministracion"
+                android:id="@+id/cardPetstore"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:layout_rowWeight="1"
@@ -200,7 +200,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/tvCountaAdmin"
+                        android:id="@+id/tvCountPet"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -224,14 +224,14 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvCountaAdmin" />
+                        app:layout_constraintTop_toBottomOf="@+id/tvCountPet" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardEducacion"
+                android:id="@+id/cardRetail"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:layout_rowWeight="1"
@@ -261,7 +261,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/tvCountEducacion"
+                        android:id="@+id/tvCountRetail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -285,7 +285,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvCountEducacion" />
+                        app:layout_constraintTop_toBottomOf="@+id/tvCountRetail" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

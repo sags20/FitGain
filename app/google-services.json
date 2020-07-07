@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "31056177249",
+    "firebase_url": "https://fitgain-ea8c5.firebaseio.com",
+    "project_id": "fitgain-ea8c5",
+    "storage_bucket": "fitgain-ea8c5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31056177249:android:999401924bcace8bd56220",
+        "android_client_info": {
+          "package_name": "com.XD.fitgain"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "31056177249-t2pp934k287qe74su5pgr3dpjnvioe9l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwSVb_2JvLN2xdubnB5gq7GMDCCn47fQ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "31056177249-t2pp934k287qe74su5pgr3dpjnvioe9l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

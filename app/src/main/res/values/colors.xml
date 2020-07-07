@@ -21,4 +21,6 @@
     <color name="pink">#F33FD6</color>
     <color name="light_green">#36DD1B</color>
     <color name="sky_blue">#4BE8DE</color>
+
+    <color name="placeholder_bg">#dddddd</color>
 </resources>

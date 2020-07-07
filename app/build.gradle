@@ -59,13 +59,10 @@ dependencies {
     //navegation chip
     implementation 'com.ismaeldivita.chipnavigation:chip-navigation-bar:1.2.0'
     implementation 'com.fxn769:ariana:1.0'
-<<<<<<< Updated upstream
-=======
 
     //Firebase Analytics
     implementation 'com.google.firebase:firebase-analytics:17.2.2'
 
     //Circular progress bar
     implementation 'com.mikhaellopez:circularprogressbar:3.0.3'
->>>>>>> Stashed changes
 }

@@ -21,6 +21,8 @@ class Activity : Fragment() {
         override fun onReceive(context: Context?, intent: Intent?) {
             if (intent != null) {
                 currentSteps = intent.extras?.get("steps").toString().toInt()
+                loadData()
+
             }
         }
     }
@@ -36,20 +38,17 @@ class Activity : Fragment() {
     override fun onStart() {
         super.onStart()
         requireActivity().registerReceiver(stepsReceiver, getIntentFilter())
+        loadData()
 
-        val sharedPreferences: SharedPreferences = requireActivity().getSharedPreferences("myPref", MODE_PRIVATE)
-        previousSteps = sharedPreferences.getInt("stepCount", 0)
-        totalSteps = previousSteps + currentSteps
+        //Log.d("STEPS_DEBUG", sharedPreferences.getInt("stepCount", 0).toString())
+        //Log.d("STEPS_DEBUG", "Pasos anteriores $previousSteps")
+        //Log.d("STEPS_DEBUG", "Pasos actuales $currentSteps")
 
-        tv_steps.text = totalSteps.toString()
-        progress_circular.apply {
-            setProgressWithAnimation(totalSteps.toFloat())
-        }
+    }
 
-        Log.d("STEPS_DEBUG", sharedPreferences.getInt("stepCount", 0).toString())
-        Log.d("STEPS_DEBUG", "Pasos anteriores $previousSteps")
-        Log.d("STEPS_DEBUG", "Pasos actuales $currentSteps")
-
+    override fun onResume() {
+        super.onResume()
+        loadData()
     }
 
     override fun onStop() {
@@ -69,6 +68,18 @@ class Activity : Fragment() {
         editor.clear()
         editor.putInt("stepCount", totalSteps)
         editor.apply()
+    }
+
+    private fun loadData() {
+        val sharedPreferences: SharedPreferences =
+            requireActivity().getSharedPreferences("myPref", MODE_PRIVATE)
+        previousSteps = sharedPreferences.getInt("stepCount", 0)
+        totalSteps = previousSteps + currentSteps
+
+        tv_steps.text = totalSteps.toString()
+        progress_circular.apply {
+            setProgressWithAnimation(totalSteps.toFloat())
+        }
     }
 
     private fun getIntentFilter(): IntentFilter {

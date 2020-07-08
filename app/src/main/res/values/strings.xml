@@ -22,4 +22,6 @@
     <string name="haz_caminado_el">Haz caminado el</string>
     <string name="oms_info">La OMS recomienda caminar 10.000 pasos al día, lo que se traduce en una distancia de siete kilómetros. Para saber más visita la pagina oficial de la Organización Mundial de la Salud.</string>
     <string name="title_oms_info">Pasos recomendados</string>
+    <string name="inicia_sesi_n">Inicia Sesión</string>
+    <string name="registrarse">Registrarse</string>
 </resources>

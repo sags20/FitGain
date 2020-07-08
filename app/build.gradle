@@ -56,7 +56,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
 
     //Lottie Animations
-    implementation 'com.airbnb.android:lottie:2.5.0'
+    implementation 'com.airbnb.android:lottie:3.4.1'
 
     //navegation chip
     implementation 'com.ismaeldivita.chipnavigation:chip-navigation-bar:1.2.0'

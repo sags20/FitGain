@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="200dp"
-            android:fontFamily="@font/rubik_medium"
+            android:fontFamily="@font/poppins_semibold"
             android:text="@string/fit_gain"
             android:textAppearance="@style/fit_gain_ready_to"
             android:textColor="@color/black"
@@ -63,8 +63,8 @@
 
         <Button
             android:id="@+id/button_get_started"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_width="250dp"
+            android:layout_height="55dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"

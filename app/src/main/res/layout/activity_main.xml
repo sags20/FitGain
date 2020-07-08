@@ -4,25 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
-   <fragment
-         android:id="@+id/complete_screen"
-         android:layout_width="match_parent"
-         android:layout_height="match_parent"
-         android:name="com.XD.fitgain.CompleteScreen"/>
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/myNavHostFragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:navGraph="@navigation/navigation"
+        app:defaultNavHost="true"/>
 
-    <!--    <fragment
-          android:id="@+id/logged_out"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:name="com.XD.fitgain.LoggedOut"/> -->
-
-  <!--    <fragment
-          android:id="@+id/register_2"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:name="com.XD.fitgain.Register2"/>-->
-
-
- </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

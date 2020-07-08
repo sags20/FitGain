@@ -8,4 +8,5 @@
     <dimen name="width_button">322dp</dimen>
     <dimen name="height_button">52dp</dimen>
     <dimen name="medium_margin">24dp</dimen>
+    <dimen name="margin_wide">16dp</dimen>
 </resources>

@@ -1,19 +1,19 @@
 <resources>
     <string name="app_name">FitGain</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="welcome_to">Welcome to FitGain</string>
-    <string name="the_best_app">The best application to exercise and win for it</string>
-    <string name="already_have">ALREADY HAVE ACCOUNT?</string>
-    <string name="sign_in">SING IN</string>
+    <string name="welcome_to">Bienvenido a FitGain</string>
+    <string name="the_best_app">La mejor aplicación para hacer ejercicio y ganar por ello.</string>
+    <string name="already_have">¿Ya tienes cuenta?</string>
     <string name="log_in">LOG IN</string>
-    <string name="final_step">Final step, define your username</string>
+    <string name="sign_up">REGISTRARSE</string>
+    <string name="final_step">Último paso, define tu nombre de usuario</string>
     <string name="hint_username">sofy_06</string>
-    <string name="terms_privacy">By signing up, you agree to Photo’s Terms of Service and Privacy Policy.</string>
-    <string name="sign_up">" SIGN UP"</string>
+    <string name="terms_privacy">Registarndo tu cuenta estás de acuero con los términos y condiciones.</string>
+    <string name="sign_up2">" SIGN UP"</string>
     <string name="fit_gain">"FITGAIN "</string>
-    <string name="ready_to_go">You are ready to go!</string>
-    <string name="thanks_for">" Thanks for taking your time to create account with us. Now explore the app. "</string>
+    <string name="ready_to_go">¡Todo listo!</string>
+    <string name="thanks_for">" Gracias por tomarte el tiempo creando tu cuenta. Ahora exploremos la app. "</string>
     <string name="button_get_started">GET STARTED</string>
+    <string name="landing_image">landing image</string>
 </resources>

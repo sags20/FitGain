@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/logOut">
+
+    <fragment
+        android:id="@+id/logOut"
+        android:name="com.XD.fitgain.ui.fragments.LogOut"
+        android:label="fragment_log_out"
+        tools:layout="@layout/fragment_log_out" >
+        <action
+            android:id="@+id/action_logOut_to_logIn"
+            app:destination="@id/logIn"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit" />
+        <action
+            android:id="@+id/action_logOut_to_register1"
+            app:destination="@id/register1"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/logIn"
+        android:name="com.XD.fitgain.ui.fragments.LogIn"
+        android:label="fragment_log_in"
+        tools:layout="@layout/fragment_log_in" >
+        <action
+            android:id="@+id/action_logIn_to_logOut"
+            app:destination="@id/logOut" />
+        <action
+            android:id="@+id/action_logIn_to_forgotPassword"
+            app:destination="@id/forgotPassword"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/register1"
+        android:name="com.XD.fitgain.ui.fragments.Register1"
+        android:label="fragment_register1"
+        tools:layout="@layout/fragment_register1" >
+        <action
+            android:id="@+id/action_register1_to_register2"
+            app:destination="@id/register2"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit" />
+        <action
+            android:id="@+id/action_register1_to_logOut"
+            app:destination="@id/logOut" />
+    </fragment>
+    <fragment
+        android:id="@+id/register2"
+        android:name="com.XD.fitgain.ui.fragments.Register2"
+        android:label="fragment_register2"
+        tools:layout="@layout/fragment_register2" >
+        <action
+            android:id="@+id/action_register2_to_register3"
+            app:destination="@id/register3"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit" />
+        <action
+            android:id="@+id/action_register2_to_register1"
+            app:destination="@id/register1" />
+    </fragment>
+    <fragment
+        android:id="@+id/register3"
+        android:name="com.XD.fitgain.ui.fragments.Register3"
+        android:label="fragment_register3"
+        tools:layout="@layout/fragment_register3" >
+        <action
+            android:id="@+id/action_register3_to_completeScreen"
+            app:destination="@id/completeScreen"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/completeScreen"
+        android:name="com.XD.fitgain.ui.fragments.CompleteScreen"
+        android:label="fragment_complete_screen"
+        tools:layout="@layout/fragment_complete_screen" >
+        <action
+            android:id="@+id/action_completeScreen_to_config1"
+            app:destination="@id/config1"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/config1"
+        android:name="com.XD.fitgain.ui.fragments.Config1"
+        android:label="fragment_config1"
+        tools:layout="@layout/fragment_config1" />
+    <fragment
+        android:id="@+id/forgotPassword"
+        android:name="com.XD.fitgain.ui.fragments.ForgotPassword"
+        android:label="fragment_forgot_password"
+        tools:layout="@layout/fragment_forgot_password" >
+        <action
+            android:id="@+id/action_forgotPassword_to_logIn"
+            app:destination="@id/logIn"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+</navigation>

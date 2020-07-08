@@ -11,10 +11,10 @@ class Repo {
     //Auth
 
     //Firestore
-    fun getPostList(nombreCategoria: String): Task<QuerySnapshot> {
+    fun getBusinessList(nombreCategoria: String): Task<QuerySnapshot> {
         return firebaseFirestore
             .collection("Negocios")
-            .whereEqualTo("categoria",nombreCategoria)
+            .whereEqualTo("categoria", nombreCategoria)
             .orderBy("createdAt", Query.Direction.DESCENDING)
             .get()
     }

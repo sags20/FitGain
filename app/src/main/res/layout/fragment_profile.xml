@@ -147,42 +147,44 @@
 
         <Button
             android:id="@+id/btn_SaveChangeUserAccount"
-            android:layout_width="250dp"
+            android:layout_width="0dp"
             android:layout_height="55dp"
             android:layout_gravity="center|bottom"
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/rounded_button"
             android:fontFamily="@font/rubik_medium"
-            android:text="Guardar cambios"
+            android:text="Guardar"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="18dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_cerrarSesion"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/et_edad" />
 
         <Button
             android:id="@+id/btn_cerrarSesion"
-            android:layout_width="250dp"
+            android:layout_width="0dp"
             android:layout_height="55dp"
             android:layout_gravity="center|bottom"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="@android:color/white"
             android:fontFamily="@font/rubik_medium"
-            android:text="Cerrar Sesión"
+            android:text="Salir"
             android:textAllCaps="false"
             android:textColor="@android:color/black"
             android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_SaveChangeUserAccount" />
+            app:layout_constraintStart_toEndOf="@+id/btn_SaveChangeUserAccount"
+            app:layout_constraintTop_toBottomOf="@+id/et_edad" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

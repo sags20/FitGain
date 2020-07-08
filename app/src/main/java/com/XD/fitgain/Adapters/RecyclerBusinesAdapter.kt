@@ -11,19 +11,28 @@ import kotlinx.android.synthetic.main.category_recycler_style.view.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-class RecyclerBusinesAdapter(var postListItems: List<Busines>) :
+class RecyclerBusinesAdapter(
+    var postListItems: List<Busines>,
+    var itemClickListener: OnItemClickListener
+) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     class BussinesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(bussines: Busines) {
+        fun bind(bussines: Busines, clickListener: OnItemClickListener) {
             Glide.with(itemView.context).load(bussines.photoUrl).into(itemView.img_restaurantLogo)
             itemView.tv_nombreRestaurante.text = bussines.nombre
 
-            val milliseconds = bussines.createdAt!!.seconds * 1000 + bussines.createdAt.nanoseconds / 1000000
+            val milliseconds =
+                bussines.createdAt!!.seconds * 1000 + bussines.createdAt.nanoseconds / 1000000
             val sdf = SimpleDateFormat("dd/MM/yyyy")
             val netDate = Date(milliseconds)
             val date = sdf.format(netDate).toString()
+
             itemView.tv_createdAt.text = "Desde: $date"
+
+            itemView.setOnClickListener {
+                clickListener.onItemClick(bussines)
+            }
         }
     }
 
@@ -38,7 +47,11 @@ class RecyclerBusinesAdapter(var postListItems: List<Busines>) :
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        (holder as BussinesViewHolder).bind(postListItems[position])
+        (holder as BussinesViewHolder).bind(postListItems[position], itemClickListener)
+    }
+
+    interface OnItemClickListener {
+        fun onItemClick(busines: Busines)
     }
 
 }

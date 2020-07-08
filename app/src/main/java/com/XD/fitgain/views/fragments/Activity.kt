@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.XD.fitgain.adapters.AlertDialogUtility
 import com.XD.fitgain.databinding.FragmentActivityBinding
 import kotlinx.android.synthetic.main.fragment_activity.*
 import kotlin.math.pow
@@ -38,13 +39,11 @@ class Activity : Fragment() {
         binding = FragmentActivityBinding.inflate(inflater, container, false)
 
         binding.btnInfo.setOnClickListener {
-            val builder = AlertDialog.Builder(activity)
-            with(builder)
-            {
-                setTitle(getString(com.XD.fitgain.R.string.title_oms_info))
-                setMessage(getString(com.XD.fitgain.R.string.oms_info))
-                show()
-            }
+            AlertDialogUtility.alertDialog(
+                requireContext(),
+                getString(com.XD.fitgain.R.string.oms_info),
+                2
+            )
         }
 
         return binding.root

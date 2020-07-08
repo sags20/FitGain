@@ -1,5 +1,6 @@
 package com.XD.fitgain.views.fragments
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.XD.fitgain.adapters.AlertDialogUtility
 
 import com.XD.fitgain.databinding.FragmentDiscoverBinding
 import com.XD.fitgain.domain.data.network.Repo
@@ -28,16 +30,27 @@ class Discover : Fragment() {
     ): View? {
         binding = FragmentDiscoverBinding.inflate(inflater, container, false)
 
-        getCountRestaurante()
-        getCountPet()
-        getCountRetail()
-        getCountTecnologia()
+        binding.btnInfo.setOnClickListener {
+            AlertDialogUtility.alertDialog(
+                requireContext(),
+                "Aquí puedes descubrir a donde gastar tus puntos de salud, podrás obtener productos completos, promociones, descuentos y más.",
+                1
+            )
+        }
 
         return binding.root
     }
 
+    override fun onResume() {
+        super.onResume()
+        getCountRestaurante()
+        getCountPet()
+        getCountRetail()
+        getCountTecnologia()
+    }
+
     private fun getCountRestaurante() {
-        firebaseRepo.getPostList("Restaurantes").addOnCompleteListener {
+        firebaseRepo.getBusinessList("Restaurantes").addOnCompleteListener {
             if (it.isSuccessful) {
                 if (it.result!!.toObjects(Busines::class.java).size == 0) {
                     tvCountRestaurante.text = "Proximamente..."
@@ -61,7 +74,7 @@ class Discover : Fragment() {
     }
 
     private fun getCountTecnologia() {
-        firebaseRepo.getPostList("Tecnologia").addOnCompleteListener {
+        firebaseRepo.getBusinessList("Tecnologia").addOnCompleteListener {
             if (it.isSuccessful) {
                 if (it.result!!.toObjects(Busines::class.java).size == 0) {
                     tvCountTec.text = "Proximamente..."
@@ -84,7 +97,7 @@ class Discover : Fragment() {
     }
 
     private fun getCountPet() {
-        firebaseRepo.getPostList("Pet").addOnCompleteListener {
+        firebaseRepo.getBusinessList("Pet").addOnCompleteListener {
             if (it.isSuccessful) {
                 if (it.result!!.toObjects(Busines::class.java).size == 0) {
                     tvCountPet.text = "Proximamente..."
@@ -107,7 +120,7 @@ class Discover : Fragment() {
     }
 
     private fun getCountRetail() {
-        firebaseRepo.getPostList("Retail").addOnCompleteListener {
+        firebaseRepo.getBusinessList("Retail").addOnCompleteListener {
             if (it.isSuccessful) {
                 if (it.result!!.toObjects(Busines::class.java).size == 0) {
                     tvCountRetail.text = "Proximamente..."

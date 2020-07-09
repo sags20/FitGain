@@ -9,7 +9,7 @@ import com.XD.fitgain.databinding.ActivityNavigationContainerHomeBinding
 import com.XD.fitgain.databinding.ActivitySplashScreenBinding
 
 class SplashScreen : AppCompatActivity() {
-    var SPLASH_SCREEN: Long = 4000
+    var SPLASH_SCREEN: Long = 3500
     private lateinit var binding : ActivitySplashScreenBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

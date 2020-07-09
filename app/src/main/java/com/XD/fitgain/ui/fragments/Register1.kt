@@ -1,7 +1,9 @@
 package com.XD.fitgain.ui.fragments
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Base64
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -23,10 +25,14 @@ import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
 import com.google.firebase.auth.FacebookAuthProvider
+import java.security.MessageDigest
+import java.security.NoSuchAlgorithmException
 
 class Register1 : Fragment() {
 
     private lateinit var binding: FragmentRegister1Binding
+
+    private val callbackManager = CallbackManager.Factory.create()
 
     companion object {
         private const val RC_SIGN_IN = 120
@@ -35,13 +41,14 @@ class Register1 : Fragment() {
     private lateinit var mAuth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
 
-    private lateinit var callbackManager: CallbackManager
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentRegister1Binding.inflate(inflater, container, false)
+
+        getHash()
 
         binding.btnBackScreen.setOnClickListener {
             it.findNavController().navigate(R.id.action_register1_to_logOut)
@@ -67,46 +74,44 @@ class Register1 : Fragment() {
             signIn()
         }
 
-        callbackManager = CallbackManager.Factory.create()
         binding.btnLoginFacebook.setOnClickListener {
 
-            LoginManager.getInstance().logInWithReadPermissions(requireActivity(), listOf("email"))
+            Log.d("FACEBOOK_LOGIN", "INICIANDO AUTH")
+            LoginManager.getInstance().logInWithReadPermissions(this, listOf("email"))
 
             LoginManager.getInstance().registerCallback(callbackManager,
-                object: FacebookCallback<LoginResult>{
+                object : FacebookCallback<LoginResult> {
                     override fun onSuccess(result: LoginResult?) {
-
                         result?.let {
                             val token = it.accessToken
                             val credential = FacebookAuthProvider.getCredential(token.token)
-                            mAuth.signInWithCredential(credential)
-                                .addOnCompleteListener { it ->
+                            FirebaseAuth.getInstance().signInWithCredential(credential)
+                                .addOnCompleteListener {
                                     if (it.isSuccessful) {
-                                        // Sign in success
+
+                                        Log.d("FACEBOOK_LOGIN", "LOGIN CREADO DE MANERA EXITOSA")
                                         val intent = Intent(requireActivity(), NavigationContainerHome::class.java)
                                         startActivity(intent)
                                         requireActivity().finish()
 
 
                                     } else {
-                                        // If sign in fails, display a message to the user.
-                                        Toast.makeText(requireActivity(), "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show()
+                                        Log.d(
+                                            "FACEBOOK_LOGIN",
+                                            "Error cuando intentamos crear en firebase."
+                                        )
                                     }
-
                                 }
                         }
-                        //handleFacebookAccessToken(result!!.accessToken)
                     }
 
                     override fun onCancel() {
-
+                        Log.d("FACEBOOK_LOGIN", "CANCELADO POR EL USUARIIO")
                     }
 
                     override fun onError(error: FacebookException?) {
-
+                        Log.d("FACEBOOK_LOGIN", "ERROR ${error!!.message}")
                     }
-
                 })
         }
 
@@ -143,7 +148,6 @@ class Register1 : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 
         //Facebook
-        callbackManager = CallbackManager.Factory.create()
 
         callbackManager.onActivityResult(requestCode, resultCode, data)
 
@@ -186,6 +190,26 @@ class Register1 : Fragment() {
                     Log.d("SignInActivity", "signInWithCredential:failure")
                 }
             }
+    }
+
+    private fun getHash() {
+        try {
+            val info = activity?.packageManager?.getPackageInfo(
+                "com.example.firebasetest",
+                PackageManager.GET_SIGNATURES
+            )
+            if (info != null) {
+                for (signature in info.signatures) {
+                    val md: MessageDigest = MessageDigest.getInstance("SHA")
+                    md.update(signature.toByteArray())
+                    val sign: String = Base64.encodeToString(md.digest(), Base64.DEFAULT)
+                    Log.d("FACEBOOK_LOGIN", sign)
+                    Toast.makeText(activity?.applicationContext, sign, Toast.LENGTH_LONG).show()
+                }
+            }
+        } catch (e: PackageManager.NameNotFoundException) {
+        } catch (e: NoSuchAlgorithmException) {
+        }
     }
 
 }

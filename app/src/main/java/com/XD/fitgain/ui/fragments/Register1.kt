@@ -1,5 +1,6 @@
 package com.XD.fitgain.ui.fragments
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
@@ -21,10 +22,10 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
 import com.google.firebase.auth.FacebookAuthProvider
+import com.google.firebase.firestore.FirebaseFirestore
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 
@@ -34,12 +35,15 @@ class Register1 : Fragment() {
 
     private val callbackManager = CallbackManager.Factory.create()
 
+    private val db = FirebaseFirestore.getInstance()
+
     companion object {
         private const val RC_SIGN_IN = 120
     }
 
     private lateinit var mAuth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
+
 
 
     override fun onCreateView(
@@ -90,10 +94,16 @@ class Register1 : Fragment() {
                                     if (it.isSuccessful) {
 
                                         Log.d("FACEBOOK_LOGIN", "LOGIN CREADO DE MANERA EXITOSA")
+                                        val currentUser = mAuth.currentUser
+                                        //Faltan validaciones
+                                        val user = hashMapOf(
+                                            "nombre" to currentUser?.displayName,
+                                            "email" to currentUser?.email
+                                        )
+                                        db.collection("Usuarios").add(user)
                                         val intent = Intent(requireActivity(), NavigationContainerHome::class.java)
                                         startActivity(intent)
                                         requireActivity().finish()
-
 
                                     } else {
                                         Log.d(
@@ -123,26 +133,6 @@ class Register1 : Fragment() {
         val signInIntent = googleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
-
-//    private fun handleFacebookAccessToken(token: AccessToken) {
-//        mAuth = FirebaseAuth.getInstance()
-//
-//        val credential = FacebookAuthProvider.getCredential(token.token)
-//        mAuth.signInWithCredential(credential)
-//            .addOnCompleteListener(requireActivity()) { task ->
-//                if (task.isSuccessful) {
-//                    val intent = Intent(requireActivity(), NavigationContainerHome::class.java)
-//                    startActivity(intent)
-//                    requireActivity().finish()
-//
-//                } else {
-//                    // If sign in fails, display a message to the user.
-//                    Toast.makeText(requireActivity(), "Authentication failed.",
-//                        Toast.LENGTH_SHORT).show()
-//                }
-//
-//            }
-//    }
 
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -182,6 +172,13 @@ class Register1 : Fragment() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d("SignInActivity", "signInWithCredential:success")
+                    val currentUser = mAuth.currentUser
+                    //Faltan validaciones
+                    val user = hashMapOf(
+                        "nombre" to currentUser?.displayName,
+                        "email" to currentUser?.email
+                    )
+                    db.collection("Usuarios").add(user)
                     val intent = Intent(requireActivity(), NavigationContainerHome::class.java)
                     startActivity(intent)
                     requireActivity().finish()
@@ -190,6 +187,15 @@ class Register1 : Fragment() {
                     Log.d("SignInActivity", "signInWithCredential:failure")
                 }
             }
+    }
+
+    private fun showAlert() {
+        val builder = AlertDialog.Builder(requireActivity())
+        builder.setTitle("Usuario ya existente")
+        builder.setMessage("El usuario ya existe, por favor inicia sesión")
+        builder.setPositiveButton("Aceptar", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 
     private fun getHash() {

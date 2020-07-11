@@ -3,6 +3,8 @@ package com.XD.fitgain.domain.data.network
 import android.util.Log
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QuerySnapshot
@@ -25,6 +27,14 @@ class Repo {
         return firebaseFirestore
             .collection("Promociones")
             .whereEqualTo("negocioUid", negocioUid.trim())
+            .get()
+    }
+
+    fun getUserData(currentUser : FirebaseUser): Task<DocumentSnapshot> {
+        Log.d("GET_USER_DATA",currentUser.uid)
+        return firebaseFirestore
+            .collection("Usuarios")
+            .document(currentUser.uid.trim())
             .get()
     }
 }

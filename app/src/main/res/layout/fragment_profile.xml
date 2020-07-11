@@ -74,24 +74,6 @@
             app:layout_constraintTop_toBottomOf="@+id/et_nombreUsuario" />
 
         <EditText
-            android:id="@+id/et_fechaNacimiento"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/b_input_field"
-            android:backgroundTint="#F0F1FF"
-            android:ems="10"
-            android:fontFamily="@font/poppins"
-            android:hint="Fecha nacimiento"
-            android:inputType="date"
-            android:textColor="@android:color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_correo" />
-
-        <EditText
             android:id="@+id/et_peso"
             android:layout_width="match_parent"
             android:layout_height="55dp"
@@ -101,13 +83,13 @@
             android:background="@drawable/b_input_field"
             android:backgroundTint="#F0F1FF"
             android:ems="10"
-            android:hint="Peso (lb)"
             android:fontFamily="@font/poppins"
+            android:hint="Peso (lb)"
             android:inputType="numberDecimal"
             android:textColor="@android:color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_fechaNacimiento" />
+            app:layout_constraintTop_toBottomOf="@+id/et_correo" />
 
         <EditText
             android:id="@+id/et_altura"

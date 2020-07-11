@@ -103,12 +103,13 @@ class LogIn : Fragment() {
 
 
                                         val currentUser = mAuth.currentUser
-//                                        Faltan validaciones
+                                        val currentPoints = 0
 
                                         val user = hashMapOf(
                                             "nombre" to currentUser?.displayName,
                                             "email" to currentUser?.email,
-                                            "photoUrl" to currentUser?.photoUrl.toString()
+                                            "photoUrl" to currentUser?.photoUrl.toString(),
+                                            "points" to currentPoints
                                         )
                                         db.collection("Usuarios").document(currentUser?.uid.toString()).set(user, SetOptions.merge())
                                         val intent = Intent(requireActivity(), NavigationContainerHome::class.java)
@@ -182,12 +183,14 @@ class LogIn : Fragment() {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d("SignInActivity", "signInWithCredential:success")
                     val currentUser = mAuth.currentUser
+                    val currentPoints = 0
 
-                    //Faltan validaciones
+
                     val user = hashMapOf(
                         "nombre" to currentUser?.displayName,
                         "email" to currentUser?.email,
-                        "photoUrl" to currentUser?.photoUrl.toString()
+                        "photoUrl" to currentUser?.photoUrl.toString(),
+                        "points" to currentPoints
                     )
                     db.collection("Usuarios").document(currentUser?.uid.toString()).set(user, SetOptions.merge())
                     val intent = Intent(requireActivity(), NavigationContainerHome::class.java)

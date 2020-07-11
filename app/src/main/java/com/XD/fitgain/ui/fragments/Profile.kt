@@ -34,7 +34,7 @@ class Profile : Fragment() {
 
         binding = FragmentProfileBinding.inflate(inflater, container, false)
 
-        Glide.with(this).load(currentUser?.photoUrl).into(circleImageView)
+       // Glide.with(this).load(currentUser?.photoUrl.toString()).into(circleImageView)
 
         binding.btnCerrarSesion.setOnClickListener {
             mAuth.signOut()

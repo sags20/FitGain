@@ -26,7 +26,6 @@ class Home : Fragment() {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-        Glide.with(this).load(currentUser?.photoUrl).into(profileP)
 
         return binding.root
     }

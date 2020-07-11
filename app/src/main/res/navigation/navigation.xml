@@ -62,6 +62,12 @@
         <action
             android:id="@+id/action_register2_to_register1"
             app:destination="@id/register1" />
+        <argument
+            android:name="userPart1"
+            app:argType="com.XD.fitgain.model.User" />
+        <argument
+            android:name="password"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/register3"
@@ -73,6 +79,12 @@
             app:destination="@id/completeScreen"
             app:enterAnim="@anim/fragment_open_enter"
             app:exitAnim="@anim/fragment_open_exit" />
+        <argument
+            android:name="userPart2"
+            app:argType="com.XD.fitgain.model.User" />
+        <argument
+            android:name="password"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/completeScreen"

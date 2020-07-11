@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: "androidx.navigation.safeargs"
 
 android {
     compileSdkVersion 29
@@ -84,4 +85,17 @@ dependencies {
     //Firestore
     implementation 'com.google.firebase:firebase-firestore-ktx:21.4.3'
 
+    //alert ui
+    implementation 'com.tapadoo.android:alerter:3.0.0'
+
+    //Firebase Auth
+    implementation 'com.google.firebase:firebase-auth:19.3.2'
+
+    //firebase storage
+    implementation 'com.google.firebase:firebase-storage:19.1.0'
+
+    //Spot dialog
+    implementation 'com.github.d-max:spots-dialog:1.1@aar'
 }
+
+

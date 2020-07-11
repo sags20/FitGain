@@ -85,7 +85,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="32dp"
             android:fontFamily="@font/poppins"
-            android:text="8+ Caracteres"
+            android:text="8+ Caracteres contraseña"
             android:textColor="#9C9EB9"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -94,13 +94,13 @@
             app:layout_constraintTop_toBottomOf="@+id/et_password" />
 
         <TextView
-            android:id="@+id/tv_alMayusCheck"
+            android:id="@+id/tv_isValidEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/poppins"
-            android:text="Al menos una letra mayúscula"
+            android:text="Formato Email válido"
             android:textColor="#9C9EB9"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -113,7 +113,6 @@
             android:layout_width="250dp"
             android:layout_height="55dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/rounded_button"
             android:fontFamily="@font/poppins_semibold"
@@ -124,7 +123,7 @@
             app:layout_constraintBottom_toTopOf="@+id/btn_LoginFacebook"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_alMayusCheck"
+            app:layout_constraintTop_toBottomOf="@+id/tv_isValidEmail"
             app:layout_constraintVertical_bias="0.73" />
 
         <TextView

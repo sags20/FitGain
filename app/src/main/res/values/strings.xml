@@ -16,4 +16,5 @@
     <string name="thanks_for">" Gracias por tomarte el tiempo creando tu cuenta. Ahora exploremos la app. "</string>
     <string name="button_get_started">GET STARTED</string>
     <string name="landing_image">landing image</string>
+    <string name="sign_in">Inicia Sesión</string>
 </resources>

@@ -3,22 +3,25 @@ package com.XD.fitgain.ui.fragments
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.XD.fitgain.R
 import com.XD.fitgain.databinding.FragmentRegister1Binding
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_register1.*
 
 class Register1 : Fragment() {
 
     private lateinit var binding: FragmentRegister1Binding
     private var mAuth: FirebaseAuth? = null
+    val db = FirebaseFirestore.getInstance()
+    val currentUser= mAuth!!.currentUser
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +42,11 @@ class Register1 : Fragment() {
                         if (task.isSuccessful) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success")
+                            val user= hashMapOf(
+                                "email" to  currentUser!!.email
+                            )
+                            db.collection("Usuarios").document(currentUser.uid.toString()).set(user)
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.exception)

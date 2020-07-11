@@ -7,6 +7,8 @@ import android.os.Handler
 import com.XD.fitgain.R
 import com.XD.fitgain.databinding.ActivityNavigationContainerHomeBinding
 import com.XD.fitgain.databinding.ActivitySplashScreenBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 class SplashScreen : AppCompatActivity() {
     var SPLASH_SCREEN: Long = 3500
@@ -24,4 +26,6 @@ class SplashScreen : AppCompatActivity() {
             startActivity(intent)
         }, SPLASH_SCREEN)
     }
+
+
 }

@@ -47,8 +47,8 @@ class Register3 : Fragment() {
             } else {
                 nuevoUsuario.genero = "Femenino"
             }
-            performCreateNewUser()
-            it.findNavController().navigate(R.id.action_register3_to_completeScreen)
+            performCreateNewUser(it)
+
         }
 
         binding.maleSelect.setOnClickListener {
@@ -87,13 +87,14 @@ class Register3 : Fragment() {
     }
 
 
-    private fun performCreateNewUser() {
+    private fun performCreateNewUser(view: View) {
         auth = FirebaseAuth.getInstance()
         auth.createUserWithEmailAndPassword(nuevoUsuario.email, password)
             .addOnCompleteListener {
                 if (it.isSuccessful) {
                     Log.d("REGISTER_DEBUG", "User created!!")
-                    uploadImageToFirebaseStorage()
+                    uploadImageToFirebaseStorage(view)
+
                 } else {
                     Log.d("REGISTER_DEBUG", "create user fail: ${it.exception}")
                     Alerter.create(activity)
@@ -104,7 +105,7 @@ class Register3 : Fragment() {
             }
     }
 
-    private fun uploadImageToFirebaseStorage() {
+    private fun uploadImageToFirebaseStorage(view: View) {
         if (Uri.parse(nuevoUsuario.photoUrl) == null) return
         alertDialog.show()
 
@@ -120,6 +121,7 @@ class Register3 : Fragment() {
                     nuevoUsuario.photoUrl = it.toString()
                     createUserInDatabase()
                     alertDialog.dismiss()
+                    view.findNavController().navigate(R.id.action_register3_to_completeScreen)
                 }
 
 
@@ -136,14 +138,10 @@ class Register3 : Fragment() {
             .addOnCompleteListener {
                 if (it.isSuccessful) {
                     Log.d("REGISTER_DEBUG", "User saved in db!!")
-
-
                 } else {
                     Log.d("REGISTER_DEBUG", "create user in db fail: ${it.exception}")
-
                 }
             }
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

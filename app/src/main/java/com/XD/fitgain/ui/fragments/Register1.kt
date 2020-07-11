@@ -26,6 +26,7 @@ import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
 import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 
@@ -98,9 +99,10 @@ class Register1 : Fragment() {
                                         //Faltan validaciones
                                         val user = hashMapOf(
                                             "nombre" to currentUser?.displayName,
-                                            "email" to currentUser?.email
+                                            "email" to currentUser?.email,
+                                            "photoUrl" to currentUser?.photoUrl.toString()
                                         )
-                                        db.collection("Usuarios").add(user)
+                                        db.collection("Usuarios").document(currentUser?.uid.toString()).set(user, SetOptions.merge())
                                         val intent = Intent(requireActivity(), NavigationContainerHome::class.java)
                                         startActivity(intent)
                                         requireActivity().finish()
@@ -176,9 +178,10 @@ class Register1 : Fragment() {
                     //Faltan validaciones
                     val user = hashMapOf(
                         "nombre" to currentUser?.displayName,
-                        "email" to currentUser?.email
+                        "email" to currentUser?.email,
+                        "photoUrl" to currentUser?.photoUrl.toString()
                     )
-                    db.collection("Usuarios").add(user)
+                    db.collection("Usuarios").document(currentUser?.uid.toString()).set(user, SetOptions.merge())
                     val intent = Intent(requireActivity(), NavigationContainerHome::class.java)
                     startActivity(intent)
                     requireActivity().finish()

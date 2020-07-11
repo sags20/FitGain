@@ -10,8 +10,10 @@ import android.view.ViewGroup
 import com.XD.fitgain.R
 import com.XD.fitgain.databinding.FragmentProfileBinding
 import com.XD.fitgain.ui.MainActivity
+import com.bumptech.glide.Glide
 import com.facebook.login.LoginManager
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.fragment_profile.*
 
 /**
  * A simple [Fragment] subclass.
@@ -28,8 +30,11 @@ class Profile : Fragment() {
     ): View? {
 
         mAuth = FirebaseAuth.getInstance()
+        val currentUser = mAuth.currentUser
 
         binding = FragmentProfileBinding.inflate(inflater, container, false)
+
+        Glide.with(this).load(currentUser?.photoUrl).into(circleImageView)
 
         binding.btnCerrarSesion.setOnClickListener {
             mAuth.signOut()

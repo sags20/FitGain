@@ -33,6 +33,7 @@ import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
+import com.google.firebase.firestore.SetOptions
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 
@@ -100,16 +101,16 @@ class LogIn : Fragment() {
                                     if (it.isSuccessful) {
                                         Log.d("FACEBOOK_LOGIN", "LOGIN CREADO DE MANERA EXITOSA")
 
+
                                         val currentUser = mAuth.currentUser
-//                                        val emailTxt = currentUser?.email
-//                                        db.collection("Usuarios").whereEqualTo("email", true)
-//                                            .get()
-                                        //Faltan validaciones
+//                                        Faltan validaciones
+
                                         val user = hashMapOf(
                                             "nombre" to currentUser?.displayName,
-                                            "email" to currentUser?.email
+                                            "email" to currentUser?.email,
+                                            "photoUrl" to currentUser?.photoUrl.toString()
                                         )
-                                        db.collection("Usuarios").add(user)
+                                        db.collection("Usuarios").document(currentUser?.uid.toString()).set(user, SetOptions.merge())
                                         val intent = Intent(requireActivity(), NavigationContainerHome::class.java)
                                         startActivity(intent)
                                         requireActivity().finish()
@@ -142,6 +143,8 @@ class LogIn : Fragment() {
         val signInIntent = googleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
+
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         //Facebook
@@ -183,9 +186,10 @@ class LogIn : Fragment() {
                     //Faltan validaciones
                     val user = hashMapOf(
                         "nombre" to currentUser?.displayName,
-                        "email" to currentUser?.email
+                        "email" to currentUser?.email,
+                        "photoUrl" to currentUser?.photoUrl.toString()
                     )
-                    db.collection("Usuarios").add(user)
+                    db.collection("Usuarios").document(currentUser?.uid.toString()).set(user, SetOptions.merge())
                     val intent = Intent(requireActivity(), NavigationContainerHome::class.java)
                     startActivity(intent)
                     requireActivity().finish()

@@ -31,7 +31,6 @@ class Repo {
     }
 
     fun getUserData(currentUser : FirebaseUser): Task<DocumentSnapshot> {
-        Log.d("GET_USER_DATA",currentUser.uid)
         return firebaseFirestore
             .collection("Usuarios")
             .document(currentUser.uid.trim())

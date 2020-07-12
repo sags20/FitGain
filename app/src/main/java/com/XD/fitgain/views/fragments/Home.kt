@@ -12,6 +12,8 @@ import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.time.LocalDateTime
+import kotlin.math.pow
+import kotlin.math.roundToInt
 
 
 class Home : Fragment() {
@@ -46,7 +48,7 @@ class Home : Fragment() {
         binding.tvAltura.text = "${currentUser.height} cm"
         binding.tvPeso.text = "${currentUser.weight} kg"
         binding.tvMetapasos.text = currentUser.goalStep.toString()
-        binding.pasos.text = currentUser.currentStep.toString()
+        binding.pasos.text = (currentUser.weight/ (currentUser.height/100.0).pow(2)).roundToInt().toString()
     }
 
     private fun getUserData() {

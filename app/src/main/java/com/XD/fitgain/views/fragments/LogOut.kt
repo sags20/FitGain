@@ -44,6 +44,7 @@ class LogOut : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        //auth.signOut()
         val currentUser = auth.currentUser
         updateUI(currentUser)
     }

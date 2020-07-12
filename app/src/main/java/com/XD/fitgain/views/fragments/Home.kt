@@ -48,7 +48,15 @@ class Home : Fragment() {
         binding.tvAltura.text = "${currentUser.height} cm"
         binding.tvPeso.text = "${currentUser.weight} kg"
         binding.tvMetapasos.text = currentUser.goalStep.toString()
-        binding.pasos.text = (currentUser.weight/ (currentUser.height/100.0).pow(2)).roundToInt().toString()
+        binding.pasos.text =
+            (currentUser.weight / (currentUser.height / 100.0).pow(2)).roundToInt().toString()
+
+        if (currentUser.weight == 1.0 || currentUser.height == 1.0 || currentUser.edad == 0) {
+            binding.tvMessage.text = "Actualiza tu altura, peso y edad para una mayor presición en los cálculos de BMI y Calorías."
+            binding.tvMessage.visibility = View.VISIBLE
+        } else {
+            binding.tvMessage.visibility = View.GONE
+        }
     }
 
     private fun getUserData() {

@@ -33,7 +33,7 @@ class Discover : Fragment() {
         binding.btnInfo.setOnClickListener {
             AlertDialogUtility.alertDialog(
                 requireContext(),
-                "Aquí puedes descubrir a donde gastar tus puntos de salud, podrás obtener productos completos, promociones, descuentos y más.",
+                "Aquí puedes descubrir a donde gastar tus puntos de salud, podrás obtener productos completos, promociones, descuentos y más. Al ser una aplicación en fase BETA no es posible realizar un canjeo de puntos en la vida real, es decir que todo lo que se encuentre en esta pestaña es ficticio. Hecho con amor por el equipo de FitGain.",
                 1
             )
         }

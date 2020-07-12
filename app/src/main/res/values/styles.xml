@@ -4,7 +4,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">#fff</item>
+        <item name="colorPrimaryDark">#000</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
@@ -18,13 +18,13 @@
     <style name="the_best_app">
         <item name="android:textSize">@dimen/letter_14</item>
         <item name="android:textColor">@color/light_gray</item>
-        <item name="fontFamily">@font/rubik</item>
+        <item name="fontFamily">@font/poppins</item>
     </style>
 
     <style name="already_have">
         <item name="android:textSize">@dimen/letter_14</item>
         <item name="android:textColor">@color/light_gray</item>
-        <item name="fontFamily">@font/rubik</item>
+        <item name="fontFamily">@font/poppins</item>
     </style>
 
     <style name="sign_in">
@@ -58,7 +58,7 @@
     <style name="fit_gain_ready_to">
         <item name="android:textSize">@dimen/letter_24</item>
         <item name="android:textColor">@color/white</item>
-        <item name="fontFamily">@font/rubik_medium</item>
+        <item name="fontFamily">@font/poppins</item>
     </style>
 
     <style name="thanks_for">

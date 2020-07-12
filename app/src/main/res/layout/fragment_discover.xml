@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.Discover"
+    tools:context=".views.fragments.Discover"
     android:orientation="vertical"
     android:background="#fff">
 
@@ -19,12 +19,20 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:layout_weight="1"
-        android:fontFamily="@font/rubik_medium"
+        android:fontFamily="@font/poppins_semibold"
         android:text="Descubrir"
         android:textColor="#000"
         android:textSize="24sp" />
 
-</LinearLayout>
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_info"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_info" />
+
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -66,7 +74,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
-                        android:fontFamily="@font/rubik_medium"
+                        android:fontFamily="@font/poppins_semibold"
                         android:text="Restaurante"
                         android:textColor="@android:color/white"
                         android:textSize="14sp"
@@ -80,7 +88,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:fontFamily="@font/rubik_medium"
+                        android:fontFamily="@font/poppins_semibold"
                         android:text="0 Negocios"
                         android:textColor="@android:color/white"
                         android:textSize="14sp"
@@ -107,7 +115,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardInformatica"
+                android:id="@+id/cardTecnologia"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:layout_rowWeight="1"
@@ -127,7 +135,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
-                        android:fontFamily="@font/rubik_medium"
+                        android:fontFamily="@font/poppins_semibold"
                         android:text="Tecnología"
                         android:textColor="@android:color/white"
                         android:textSize="14sp"
@@ -137,11 +145,11 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/tvCountInformatica"
+                        android:id="@+id/tvCountTec"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:fontFamily="@font/rubik_medium"
+                        android:fontFamily="@font/poppins_semibold"
                         android:text="0 Negocios"
                         android:textColor="@android:color/white"
                         android:textSize="14sp"
@@ -161,14 +169,14 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvCountInformatica" />
+                        app:layout_constraintTop_toBottomOf="@+id/tvCountTec" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardAdministracion"
+                android:id="@+id/cardPetstore"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:layout_rowWeight="1"
@@ -190,7 +198,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
                         android:layout_marginEnd="8dp"
-                        android:fontFamily="@font/rubik_medium"
+                        android:fontFamily="@font/poppins_semibold"
                         android:text="PetStore"
                         android:textColor="@android:color/white"
                         android:textSize="14sp"
@@ -200,11 +208,11 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/tvCountaAdmin"
+                        android:id="@+id/tvCountPet"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:fontFamily="@font/rubik_medium"
+                        android:fontFamily="@font/poppins_semibold"
                         android:text="0 Negocios"
                         android:textColor="@android:color/white"
                         android:textSize="14sp"
@@ -224,14 +232,14 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvCountaAdmin" />
+                        app:layout_constraintTop_toBottomOf="@+id/tvCountPet" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardEducacion"
+                android:id="@+id/cardRetail"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:layout_rowWeight="1"
@@ -251,7 +259,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
-                        android:fontFamily="@font/rubik_medium"
+                        android:fontFamily="@font/poppins_semibold"
                         android:text="Retail"
                         android:textColor="@android:color/white"
                         android:textSize="14sp"
@@ -261,11 +269,11 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/tvCountEducacion"
+                        android:id="@+id/tvCountRetail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:fontFamily="@font/rubik_medium"
+                        android:fontFamily="@font/poppins_semibold"
                         android:text="0 Negocios"
                         android:textColor="@android:color/white"
                         android:textSize="14sp"
@@ -285,7 +293,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvCountEducacion" />
+                        app:layout_constraintTop_toBottomOf="@+id/tvCountRetail" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

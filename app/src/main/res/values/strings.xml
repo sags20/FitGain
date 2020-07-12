@@ -16,4 +16,16 @@
     <string name="thanks_for">" Gracias por tomarte el tiempo creando tu cuenta. Ahora exploremos la app. "</string>
     <string name="button_get_started">GET STARTED</string>
     <string name="landing_image">landing image</string>
+    <string name="puntos_de_salud_ps">Puntos de Salud (PS)</string>
+    <string name="PS_info">Estos puntos los haz ganado haciendo ejercicio, ¡Sigue así! Entre más tengas más cerca estás de tu objetivo.</string>
+    <string name="pasos_de_hoy">PASOS DE HOY</string>
+    <string name="haz_caminado_el">Haz caminado el</string>
+    <string name="oms_info">La OMS recomienda caminar 10.000 pasos al día, lo que se traduce en una distancia de siete kilómetros. Para saber más visita la pagina oficial de la Organización Mundial de la Salud.</string>
+    <string name="title_oms_info">Pasos recomendados</string>
+    <string name="inicia_sesi_n">Inicia Sesión</string>
+    <string name="registrarse">Registrarse</string>
+
+    //Facebook Auth
+    <string name="facebook_app_id">316654652672904</string>
+    <string name="fb_login_protocol_scheme">fb316654652672904</string>
 </resources>

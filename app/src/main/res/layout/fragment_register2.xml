@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.Register2"
+    tools:context=".views.fragments.Register2"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,14 +26,14 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="42dp"
-            android:fontFamily="@font/rubik_medium"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_semibold"
             android:text="Foto de perfil"
             android:textColor="@color/black_text"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_backScreen" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/cimg_profilePicture"
@@ -52,60 +52,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/rubik_medium"
+            android:fontFamily="@font/poppins_semibold"
             android:text="Agregar foto"
             android:textColor="@color/light_purple"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cimg_profilePicture" />
 
-        <TextView
-            android:id="@+id/user_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/rubik"
-            android:text="Nombre de usuario"
-            android:textColor="#9C9EB9"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.07"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/upload_photo" />
-
-        <EditText
-            android:id="@+id/et_username"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/b_input_field"
-            android:backgroundTint="#F0F1FF"
-            android:ems="10"
-            android:fontFamily="@font/rubik"
-            android:hint="Ingresa tu nombre de usuario"
-            android:inputType="text"
-            android:textColor="@android:color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/user_text" />
-
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/rubik"
-            android:text="Fecha de nacimiento"
+            android:fontFamily="@font/poppins"
+            android:text="Edad"
             android:textColor="#9C9EB9"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.07"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_username" />
+            app:layout_constraintTop_toBottomOf="@+id/upload_photo" />
 
         <EditText
-            android:id="@+id/et_bornDate"
+            android:id="@+id/et_age"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
@@ -114,10 +84,9 @@
             android:background="@drawable/b_input_field"
             android:backgroundTint="#F0F1FF"
             android:ems="10"
-            android:fontFamily="@font/rubik"
-            android:hint="01/01/1999"
-            android:inputType="date"
-            android:focusable="false"
+            android:fontFamily="@font/poppins"
+            android:hint="Ingresa tu edad"
+            android:inputType="number"
             android:clickable="true"
             android:textColor="@android:color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -128,14 +97,15 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/rubik"
+            android:fontFamily="@font/poppins"
             android:text="Tu peso actual"
             android:textColor="#9C9EB9"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.07"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_bornDate" />
+            app:layout_constraintTop_toBottomOf="@+id/et_age" />
 
         <EditText
             android:id="@+id/et_peso"
@@ -147,32 +117,64 @@
             android:background="@drawable/b_input_field"
             android:backgroundTint="#F0F1FF"
             android:ems="10"
-            android:fontFamily="@font/rubik"
-            android:hint="0 lb"
+            android:fontFamily="@font/poppins"
+            android:hint="0.0 kg"
             android:inputType="numberDecimal"
             android:textColor="@android:color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins"
+            android:text="Tu altura actual (cm)"
+            android:textColor="#9C9EB9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_peso" />
+
+        <EditText
+            android:id="@+id/et_altura"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/b_input_field"
+            android:backgroundTint="#F0F1FF"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:hint="0.0 cm"
+            android:inputType="numberDecimal"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
         <Button
             android:id="@+id/btn_continuar"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_width="250dp"
+            android:layout_height="55dp"
             android:layout_gravity="center|bottom"
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="32dp"
             android:background="@drawable/rounded_button"
-            android:fontFamily="@font/rubik_medium"
+            android:fontFamily="@font/poppins_semibold"
             android:text="Continuar"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/et_peso"
             app:layout_constraintVertical_bias="1.0" />

@@ -1,7 +1,9 @@
 package com.XD.fitgain.views.fragments
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Base64
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,16 +15,24 @@ import com.XD.fitgain.R
 import com.XD.fitgain.databinding.FragmentLogInBinding
 import com.XD.fitgain.model.User
 import com.XD.fitgain.views.NavigationContainerHome
+import com.facebook.CallbackManager
+import com.facebook.FacebookCallback
+import com.facebook.FacebookException
+import com.facebook.login.LoginManager
+import com.facebook.login.LoginResult
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
+import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import com.tapadoo.alerter.Alerter
+import java.security.MessageDigest
+import java.security.NoSuchAlgorithmException
 
 class LogIn : Fragment() {
     private lateinit var binding: FragmentLogInBinding
@@ -30,7 +40,7 @@ class LogIn : Fragment() {
     private var auth: FirebaseAuth = FirebaseAuth.getInstance()
     private lateinit var googleSignInClient: GoogleSignInClient
 
-    // private val callbackManager = CallbackManager.Factory.create()
+    private val callbackManager = CallbackManager.Factory.create()
     private val db = FirebaseFirestore.getInstance()
 
     private val RC_SIGN_IN = 120
@@ -40,6 +50,8 @@ class LogIn : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentLogInBinding.inflate(inflater, container, false)
+
+        //getHash()
 
         binding.btnBackScreen.setOnClickListener {
             it.findNavController().navigate(R.id.action_logIn_to_logOut)
@@ -75,6 +87,75 @@ class LogIn : Fragment() {
         }
         //----------------- FIN GOOGLE SIGN IN ----------------------
 
+        binding.btnLoginFacebook.setOnClickListener {
+            Log.d("FACEBOOK_LOGIN", "INICIANDO AUTH")
+            LoginManager.getInstance().logInWithReadPermissions(this, listOf("email"))
+
+            LoginManager.getInstance().registerCallback(callbackManager,
+                object : FacebookCallback<LoginResult> {
+                    override fun onSuccess(result: LoginResult?) {
+                        result?.let {
+                            val token = it.accessToken
+                            val credential = FacebookAuthProvider.getCredential(token.token)
+                            FirebaseAuth.getInstance().signInWithCredential(credential)
+                                .addOnCompleteListener {
+                                    if (it.isSuccessful) {
+                                        Log.d("FACEBOOK_LOGIN", "LOGIN CREADO DE MANERA EXITOSA")
+
+
+                                        val currentUser = auth.currentUser
+                                        var nuevoUsuario = User()
+
+                                        nuevoUsuario.photoUrl = currentUser!!.photoUrl.toString()
+                                        nuevoUsuario.nombre = currentUser.displayName.toString()
+                                        nuevoUsuario.email = currentUser.email.toString()
+                                        nuevoUsuario.uid = currentUser.uid
+
+                                        val userExist =
+                                            db.collection("Usuarios").document(currentUser.uid)
+                                                .get()
+                                        Log.d("FACEBOOK_LOGIN",userExist.toString())
+                                        if (userExist == null) {
+                                            db.collection("Usuarios").document(currentUser.uid)
+                                                .set(nuevoUsuario, SetOptions.merge())
+                                        } else {
+                                            val data = hashMapOf(
+                                                "photoUrl" to currentUser.photoUrl.toString(),
+                                                "nombre" to currentUser.displayName.toString(),
+                                                "email" to currentUser.email.toString(),
+                                                "uid" to currentUser.uid
+                                            )
+                                            db.collection("Usuarios").document(currentUser.uid)
+                                                .set(data, SetOptions.merge())
+                                        }
+
+                                        val intent = Intent(
+                                            requireActivity(),
+                                            NavigationContainerHome::class.java
+                                        )
+                                        startActivity(intent)
+                                        requireActivity().finish()
+
+                                    } else {
+                                        Log.d(
+                                            "FACEBOOK_LOGIN",
+                                            "Error cuando intentamos crear en firebase."
+                                        )
+                                    }
+                                }
+                        }
+                    }
+
+                    override fun onCancel() {
+                        Log.d("FACEBOOK_LOGIN", "CANCELADO POR EL USUARIIO")
+                    }
+
+                    override fun onError(error: FacebookException?) {
+                        Log.d("FACEBOOK_LOGIN", "ERROR ${error!!.message}")
+                    }
+                })
+        }
+
         return binding.root
     }
 
@@ -105,6 +186,8 @@ class LogIn : Fragment() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        //Facebook
+        callbackManager.onActivityResult(requestCode, resultCode, data)
         super.onActivityResult(requestCode, resultCode, data)
 
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
@@ -175,6 +258,4 @@ class LogIn : Fragment() {
         }
 
     }
-
-
 }

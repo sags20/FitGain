@@ -27,10 +27,6 @@ class RecyclerPromoAdapter(
 
             itemView.tv_puntos.text = "${promo.pointsRequired} PS"
 
-            itemView.setOnClickListener {
-                clickListener.onItemClick(promo)
-            }
-
         }
     }
 

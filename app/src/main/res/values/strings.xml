@@ -24,4 +24,8 @@
     <string name="title_oms_info">Pasos recomendados</string>
     <string name="inicia_sesi_n">Inicia Sesión</string>
     <string name="registrarse">Registrarse</string>
+
+    //Facebook Auth
+    <string name="facebook_app_id">316654652672904</string>
+    <string name="fb_login_protocol_scheme">fb316654652672904</string>
 </resources>

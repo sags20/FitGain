@@ -106,9 +106,13 @@ class Register3 : Fragment() {
     }
 
     private fun uploadImageToFirebaseStorage(view: View) {
-        if (Uri.parse(nuevoUsuario.photoUrl) == null) return
-        alertDialog.show()
+        if (nuevoUsuario.photoUrl.isEmpty()) {
+            createUserInDatabase()
+            view.findNavController().navigate(R.id.action_register3_to_completeScreen)
+            return
+        }
 
+        alertDialog.show()
         val filename = UUID.randomUUID().toString()
         val ref = FirebaseStorage.getInstance().getReference("/images/$filename")
         ref.putFile(Uri.parse(nuevoUsuario.photoUrl))
@@ -134,6 +138,9 @@ class Register3 : Fragment() {
 
     private fun createUserInDatabase() {
         nuevoUsuario.uid = FirebaseAuth.getInstance().uid ?: ""
+        nuevoUsuario.photoUrl =
+            "https://images.unsplash.com/photo-1591291621164-2c6367723315?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80"
+
         db.collection("Usuarios").document(nuevoUsuario.uid).set(nuevoUsuario)
             .addOnCompleteListener {
                 if (it.isSuccessful) {

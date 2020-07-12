@@ -34,6 +34,9 @@ android {
 
 }
 
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.android.application'
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -102,6 +105,7 @@ dependencies {
 
     //Facebook SDK
     implementation 'com.facebook.android:facebook-android-sdk:[5,6)'
+    
 }
 
 

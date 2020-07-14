@@ -9,8 +9,8 @@ Para utilizar el proyecto no es necesario instalar nada externo, lo único a men
   - Digital Ocean, como hosting para los términos y condiciones
 
 # Usuario para acceder
-  fitgaindev@gmail.com
-  12345678
+correo: fitgaindev@gmail.com
+contraseña: 12345678
 
 
 License

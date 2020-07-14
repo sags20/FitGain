@@ -66,6 +66,7 @@ class Profile : Fragment() {
             currentUser.weight = binding.etPeso.text.toString().toDouble()
             currentUser.height = binding.etAltura.text.toString().toDouble()
             currentUser.edad = binding.etEdad.text.toString().toInt()
+            currentUser.goalStep = binding.etMetapasos.text.toString().toInt()
             uploadImageToFirebaseStorage()
         }
 
@@ -87,7 +88,7 @@ class Profile : Fragment() {
     }
 
     private fun uploadImageToFirebaseStorage() {
-        if (selectedPhotoUri== null){
+        if (selectedPhotoUri == null) {
             saveUser()
             return
         }
@@ -117,19 +118,20 @@ class Profile : Fragment() {
     }
 
     private fun saveUser() {
-        firebaseFirestore.collection("Usuarios").document(currentUser.uid).set(currentUser).addOnCompleteListener {
-            if(it.isSuccessful){
-                Alerter.create(activity)
-                    .setText("¡Datos actualizados correctamente!")
-                    .setBackgroundColorRes(R.color.alerter_default_success_background)
-                    .show()
-            }else{
-                Alerter.create(activity)
-                    .setText("Ha ocurrido un error")
-                    .setBackgroundColorRes(R.color.alert_default_error_background)
-                    .show()
+        firebaseFirestore.collection("Usuarios").document(currentUser.uid).set(currentUser)
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    Alerter.create(activity)
+                        .setText("¡Datos actualizados correctamente!")
+                        .setBackgroundColorRes(R.color.alerter_default_success_background)
+                        .show()
+                } else {
+                    Alerter.create(activity)
+                        .setText("Ha ocurrido un error")
+                        .setBackgroundColorRes(R.color.alert_default_error_background)
+                        .show()
+                }
             }
-        }
     }
 
     private fun setViewData() {
@@ -139,7 +141,7 @@ class Profile : Fragment() {
         binding.etEdad.setText("${currentUser.edad}")
         binding.etNombreUsuario.setText(currentUser.nombre)
         binding.etPeso.setText("${currentUser.weight}")
-
+        binding.etMetapasos.setText(currentUser.goalStep.toString())
 
     }
 

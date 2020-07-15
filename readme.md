@@ -17,7 +17,7 @@ License
 ----
 ----
 
-GNU GENERAL PUBLIC LICENSE
+MIT License
 
 
 

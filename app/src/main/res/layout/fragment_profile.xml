@@ -95,7 +95,7 @@
             android:backgroundTint="#F0F1FF"
             android:ems="10"
             android:fontFamily="@font/poppins"
-            android:hint="Usuario"
+            android:hint="Ingresa tu Nombre"
             android:inputType="textPersonName"
             android:textColor="@android:color/black"
             app:layout_constraintEnd_toEndOf="parent"

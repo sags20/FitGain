@@ -51,7 +51,7 @@ public class StepsLoggerService extends Service implements SensorEventListener {
 
             MagnitudePrevious = Magnitude;
 
-            if (MagnitudeDelta > 6) {
+            if (MagnitudeDelta > 5) {
                 stepCount++;
             }
 
@@ -70,8 +70,5 @@ public class StepsLoggerService extends Service implements SensorEventListener {
         intent.setAction("STEPS_CHANGED");
         intent.putExtra("steps", stepCount);
         sendBroadcast(intent);
-
     }
-
-
 }

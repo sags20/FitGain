@@ -19,8 +19,8 @@ android {
         applicationId "com.XD.fitgain"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 2
-        versionName "2"
+        versionCode 4
+        versionName "v.2.0.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
